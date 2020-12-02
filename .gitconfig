@@ -1,0 +1,26 @@
+# This is Git's per-user configuration file.
+
+[user]
+    name = Joshua Barrington
+    email = joshua.barrington@openenergi.com
+
+[merge]
+    tool = vimdiff
+    conflictstyle = diff3
+
+[mergetool "vimdiff"]
+    cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
+    prompt = false
+
+[diff]
+    tool = vimdiff
+
+[hub]
+    protocol = ssh
+
+[core]
+    editor = nvim
+    excludesfile = ~/.gitignoreglobal
+
+[pull]
+    rebase = false
