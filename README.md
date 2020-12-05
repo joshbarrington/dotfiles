@@ -24,5 +24,5 @@
 
 #### Install Language Servers
 
-`https://github.com/MaskRay/ccls/wiki/Build`
+`https://github.com/MaskRay/ccls/wiki/Build`\
 `https://github.com/juliosueiras/terraform-lsp`
