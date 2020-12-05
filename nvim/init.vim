@@ -131,12 +131,3 @@ let g:fzf_preview_filelist_command = 'rg --files --hidden --follow --no-messages
 let g:fzf_preview_use_dev_icons = 1
 
 command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1, {'options': '--delimiter : --nth 4..'}, <bang>0)
-
-" Use coc-prettier and coc-eslint if present in node_modules
-if isdirectory('./node_modules') && isdirectory('./node_modules/prettier')
-  let g:coc_global_extensions += ['coc-prettier']
-endif
-
-if isdirectory('./node_modules') && isdirectory('./node_modules/eslint')
-  let g:coc_global_extensions += ['coc-eslint']
-endif
