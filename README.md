@@ -26,9 +26,10 @@
 
 1. [C/C++](https://github.com/MaskRay/ccls/wiki/Build)\
 
-- For ccls config in coc-settings, see https://github.com/MaskRay/ccls/issues/191
-  - See output of `clang -v -fsyntax-only -x c++ /dev/null` for `extraArgs`
-  - See output of `clang -print-resource-dir` for `resourceDir`
+For ccls config in coc-settings, see https://github.com/MaskRay/ccls/issues/191
+
+- See output of `clang -v -fsyntax-only -x c++ /dev/null` for `extraArgs`
+- See output of `clang -print-resource-dir` for `resourceDir`
 
 2. [Terraform](https://github.com/juliosueiras/terraform-lsp)
 
