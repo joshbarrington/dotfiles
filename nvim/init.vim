@@ -1,5 +1,4 @@
 let g:python3_host_prog = "/Users/" . $USER . "/.venv/neovim3/bin/python"
-let g:python2_host_prog = "/Users/" . $USER . "/.venv/neovim2/bin/python"
 
 let mapleader = " "
 
@@ -72,6 +71,8 @@ call plug#begin()
     Plug 'wincent/ferret'
     Plug 'pangloss/vim-javascript'
     Plug 'mattn/emmet-vim'
+    Plug 'plasticboy/vim-markdown'
+    Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 call plug#end()
 
 " NERDTree
@@ -92,6 +93,7 @@ let g:airline#extensions#tabline#buffer_idx_mode = 1
 " Emmet leader key use ',,' to trigger HTML tag completion
 let g:user_emmet_leader_key=','
 
+" Select Airline Tab
 nmap <leader>1 <Plug>AirlineSelectTab1
 nmap <leader>2 <Plug>AirlineSelectTab2
 nmap <leader>3 <Plug>AirlineSelectTab3
@@ -104,6 +106,11 @@ colorscheme gruvbox
 
 " Set .mk extension to Make filetype
 au BufRead,BufNewFile *.mk setfiletype Make
+
+" Don't conceal markdown
+let g:vim_json_syntax_conceal = 0
+let g:vim_markdown_conceal = 0
+let g:vim_markdown_conceal_code_blocks = 0
 
 " True colours for fzf preview
 augroup fzf_preview
@@ -119,12 +126,10 @@ endfunction
 " Map \f to CocAction format
 noremap <Leader>f :Format<CR>
 " Map \p to FZF preview project files
-noremap <Leader>g :CocCommand fzf-preview.GitFiles<CR>
 noremap <Leader>p :CocCommand fzf-preview.ProjectFiles<CR>
+noremap <Leader>g :CocCommand fzf-preview.GitFiles<CR>
 noremap <Leader>b :CocCommand fzf-preview.Buffers<CR>
 noremap <leader>r :Rg<CR>
-
-let g:fzf_tags_command = 'ctags -R'
 
 " FZF preview options
 let g:fzf_preview_filelist_command = 'rg --files --hidden --follow --no-messages -g \!"* *"'
