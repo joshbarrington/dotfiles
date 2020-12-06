@@ -20,15 +20,28 @@
     },
     "ccls": {
       "command": "ccls",
-      "args": ["--log-file=/tmp/ccls.log", "-v=1"],
-      "filetypes": ["c", "cc", "cpp", "c++", "objc", "objcpp"],
-      "rootPatterns": [".ccls", "compile_commands.json"],
+      "filetypes": ["c", "cpp", "objc", "objcpp"],
+      "rootPatterns": [
+        ".ccls",
+        "compile_commands.json",
+        ".vim/",
+        ".git/",
+        ".hg/"
+      ],
       "initializationOptions": {
         "cache": {
           "directory": "/tmp/ccls"
         },
-        "client": {
-          "snippetSupport": true
+        "clang": {
+          "extraArgs": [
+            "-isystem/usr/local/include",
+            "-isystem/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1",
+            "-isystem/Library/Developer/CommandLineTools/usr/lib/clang/11.0.0/include",
+            "-isystem/Library/Developer/CommandLineTools/usr/include",
+            "-isystem/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include",
+            "-isystem/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/System/Library/Frameworks"
+          ],
+          "resourceDir": "/Library/Developer/CommandLineTools/usr/lib/clang/10.0.1"
         }
       }
     }
