@@ -24,7 +24,7 @@
 
 #### Install Language Servers
 
-1. [C/C++](https://github.com/MaskRay/ccls/wiki/Build)\
+1. [C/C++](https://github.com/MaskRay/ccls/wiki/Build)
 
 For ccls config in coc-settings, see https://github.com/MaskRay/ccls/issues/191
 
@@ -35,4 +35,4 @@ For ccls config in coc-settings, see https://github.com/MaskRay/ccls/issues/191
 
 #### CoC Extensions
 
-`coc-prettier`\ `coc-fzf-preview`\ `coc-eslint`\ `coc-tsserver`\ `coc-python`\ `coc-json`\ `coc-html`\ `coc-go`\
+`coc-prettier` `coc-fzf-preview` `coc-eslint` `coc-tsserver` `coc-python` `coc-json` `coc-html` `coc-go`
