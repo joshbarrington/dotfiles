@@ -68,6 +68,7 @@ homebrew_cask_apps:
     - postman
     - font-fira-code
     - font-firacode-nerd-font
+    - maccy
     - vlc
     - xld
     - audio-hijack

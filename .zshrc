@@ -25,7 +25,7 @@ prompt spaceship
 # asdf start up script
 . /usr/local/opt/asdf/asdf.sh
 
-export PATH="/usr/local/sbin:$PATH"
+export PATH="/usr/local/sbin:/usr/local/opt/llvm/bin:$PATH"
 # go path
 export GOPATH=$HOME/.asdf/installs/golang/1.15/go
 export GOBIN=$HOME/.asdf/installs/golang/1.15/go/bin
