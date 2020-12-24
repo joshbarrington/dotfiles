@@ -107,10 +107,11 @@ colorscheme gruvbox
 " Set .mk extension to Make filetype
 au BufRead,BufNewFile *.mk setfiletype Make
 
-" Don't conceal markdown
+" Don't conceal or fold markdown and json
 let g:vim_json_syntax_conceal = 0
 let g:vim_markdown_conceal = 0
 let g:vim_markdown_conceal_code_blocks = 0
+let g:vim_markdown_folding_disabled = 1
 
 " True colours for fzf preview
 augroup fzf_preview
