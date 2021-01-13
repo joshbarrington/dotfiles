@@ -10,71 +10,72 @@ dotfiles_repo: https://github.com/Joshbarrington/dotfiles.git
 dotfiles_repo_accept_hostkey: yes
 dotfiles_repo_local_destination: ~/github/dotfiles
 dotfiles_files:
-    - .gitconfig
-    - .gitignoreglobal
-    - .osx
-    - .zshrc
+  - .gitconfig
+  - .gitignoreglobal
+  - .osx
+  - .zshrc
 
 homebrew_installed_packages:
-    - aws-shell
-    - awscli
-    - azure-cli
-    - asdf
-    - bat
-    - ccls
-    - cmake
-    - ctags
-    - curl
-    - exa
-    - fd
-    - ffmpeg
-    - fswatch
-    - fzf
-    - fx
-    - gh
-    - git
-    - httpie
-    - hub
-    - jq
-    - mas
-    - neovim
-    - node
-    - openssl
-    - ripgrep
-    - tig
-    - tree
-    - unzip
-    - wget
-    - zsh
-    - zsh-autosuggestions
+  - aws-shell
+  - awscli
+  - azure-cli
+  - asdf
+  - bat
+  - ccls
+  - cmake
+  - ctags
+  - curl
+  - exa
+  - fd
+  - ffmpeg
+  - fswatch
+  - fzf
+  - fx
+  - gh
+  - git
+  - httpie
+  - hub
+  - jq
+  - mas
+  - neovim
+  - node
+  - openssl
+  - ripgrep
+  - rename
+  - tig
+  - tree
+  - unzip
+  - wget
+  - zsh
+  - zsh-autosuggestions
 
 homebrew_taps:
-    - homebrew/core
-    - homebrew/cask-fonts
+  - homebrew/core
+  - homebrew/cask-fonts
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
-    - docker
-    - firefox
-    - google-chrome
-    - licecap
-    - slack
-    - iterm2
-    - dash
-    - tunnelblick
-    - keybase
-    - spotify
-    - visual-studio-code
-    - postman
-    - font-fira-code
-    - font-firacode-nerd-font
-    - maccy
-    - vlc
-    - xld
-    - audio-hijack
-    - keycastr
-    - beardedspice
-    - chromedriver
+  - docker
+  - firefox
+  - google-chrome
+  - licecap
+  - slack
+  - iterm2
+  - dash
+  - tunnelblick
+  - keybase
+  - spotify
+  - visual-studio-code
+  - postman
+  - font-fira-code
+  - font-firacode-nerd-font
+  - maccy
+  - vlc
+  - xld
+  - audio-hijack
+  - keycastr
+  - beardedspice
+  - chromedriver
 
 # See https://github.com/geerlingguy/mac-dev-playbook for below config options.
 mas_installed_apps: []
