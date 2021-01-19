@@ -56,6 +56,7 @@ homebrew_taps:
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
   - docker
+  - rectangle
   - firefox
   - google-chrome
   - licecap
@@ -76,6 +77,9 @@ homebrew_cask_apps:
   - keycastr
   - beardedspice
   - chromedriver
+  - keepassxc
+  - signal
+  - whatsapp
 
 # See https://github.com/geerlingguy/mac-dev-playbook for below config options.
 mas_installed_apps: []
