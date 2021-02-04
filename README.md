@@ -14,6 +14,15 @@
 
 `pip install ansible`
 
+#### Run mac-dev-playbook
+
+`https://github.com/geerlingguy/mac-dev-playbook`
+
+#### Symlinks
+
+Contents of `nvim` to `~/.config/nvim`
+`bat` folder to `~/.config/bat`
+
 #### Install oh-my-zsh
 
 `git clone https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh`
