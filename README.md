@@ -20,7 +20,7 @@
 
 #### Symlinks
 
-Contents of `nvim` to `~/.config/nvim`
+`nvim/*` to `~/.config/nvim`\
 `bat` folder to `~/.config/bat`
 
 #### Install oh-my-zsh
