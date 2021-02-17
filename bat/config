@@ -2,7 +2,7 @@
 --theme="gruvbox-dark"
 
 # Show Git modifications and file header (but no grid)
---style="changes,header"
+--style="numbers,changes,header"
 
 # Use italic text on the terminal (not supported on all terminals)
 --italic-text=always

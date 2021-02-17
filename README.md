@@ -48,4 +48,4 @@ For ccls config in coc-settings, see https://github.com/MaskRay/ccls/issues/191
 
 #### CoC Extensions
 
-`coc-prettier` `coc-fzf-preview` `coc-eslint` `coc-tsserver` `coc-python` `coc-json` `coc-html` `coc-go`
+`coc-prettier` `coc-fzf-preview` `coc-eslint` `coc-tsserver` `coc-python` `coc-json` `coc-html` `coc-go` `coc-cmake` `coc-rust-analyzer`
