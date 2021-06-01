@@ -15,6 +15,9 @@ source $ZSH/oh-my-zsh.sh
 # Brew zsh autosuggestions
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
+# Broot
+source /Users/joshua.barrington/.config/broot/launcher/bash/br
+
 # Fuzzy Finder
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -30,6 +33,11 @@ export PATH="/usr/local/sbin:/usr/local/opt/llvm/bin:$PATH"
 export GOPATH=$HOME/.asdf/installs/golang/1.15/go
 export GOBIN=$HOME/.asdf/installs/golang/1.15/go/bin
 # path to asdf python
-export PATH=$HOME/.asdf/installs/python/3.6.10/bin:$PATH
+export PATH=$HOME/.asdf/installs/python/3.8.8/bin:$PATH
 # path to asdf go
 export PATH=$GOPATH:$GOBIN:$PATH
+# rustup
+source "$HOME/.cargo/env"
+
+# aliases
+alias tree='tree -I "$(paste -d\| -s ~/.treeignore)"'

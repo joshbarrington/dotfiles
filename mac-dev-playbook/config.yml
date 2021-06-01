@@ -22,7 +22,9 @@ homebrew_installed_packages:
   - azure-cli
   - asdf
   - bat
+  - broot
   - ccls
+  - clang-format
   - cmake
   - ctags
   - curl
