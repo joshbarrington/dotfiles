@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/joshua.barrington/.oh-my-zsh"
+export ZSH="/Users/joshuabarrington/.oh-my-zsh"
 
 plugins=(
   git
@@ -16,7 +16,7 @@ source $ZSH/oh-my-zsh.sh
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Broot
-source /Users/joshua.barrington/.config/broot/launcher/bash/br
+source /Users/joshuabarrington/.config/broot/launcher/bash/br
 
 # Fuzzy Finder
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
