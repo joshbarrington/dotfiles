@@ -2,7 +2,7 @@
 
 [user]
     name = Joshua Barrington
-    email = jb@neurocat.com
+    email = jb@neurocat.ai
 
 [merge]
     tool = vimdiff
