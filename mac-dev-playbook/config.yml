@@ -2,11 +2,15 @@
 downloads: ~/.ansible-downloads/
 
 configure_dotfiles: true
+configure_terminal: false
 configure_osx: true
-configure_sudoers: false
+
 configure_dock: false
 dockitems_remove: []
 dockitems_persist: []
+
+configure_sudoers: false
+sudoers_custom_config: ''
 
 dotfiles_repo: https://github.com/Joshbarrington/dotfiles.git
 dotfiles_repo_accept_hostkey: true
@@ -91,6 +95,8 @@ mas_installed_apps: []
 mas_email: ""
 mas_password: ""
 
+osx_script: "sudo bash ~/.osx --no-restart"
+
 composer_packages: []
 
 gem_packages: []
@@ -98,5 +104,7 @@ gem_packages: []
 npm_packages: []
 
 pip_packages: []
+
+configure_sublime: false
 
 post_provision_tasks: []
