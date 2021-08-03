@@ -1,13 +1,15 @@
 ---
 downloads: ~/.ansible-downloads/
 
-configure_dotfiles: yes
-configure_sudoers: no
-configure_terminal: no
-configure_osx: yes
+configure_dotfiles: true
+configure_osx: true
+configure_sudoers: false
+configure_dock: false
+dockitems_remove: []
+dockitems_persist: []
 
 dotfiles_repo: https://github.com/Joshbarrington/dotfiles.git
-dotfiles_repo_accept_hostkey: yes
+dotfiles_repo_accept_hostkey: true
 dotfiles_repo_local_destination: ~/github/dotfiles
 dotfiles_files:
   - .gitconfig
