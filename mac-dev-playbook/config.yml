@@ -74,7 +74,7 @@ homebrew_cask_apps:
   - visual-studio-code
   - postman
   - font-fira-code
-  - font-firacode-nerd-font
+  - font-fira-code-nerd-font
   - maccy
   - vlc
   - xld

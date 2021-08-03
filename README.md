@@ -6,17 +6,11 @@
 
 `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"`
 
-#### Install pip
+#### Install Ansible / Run playbook
 
-`sudo easy_install pip`
+- https://github.com/geerlingguy/mac-dev-playbook
+- replace contents of `default.config.yml` with `mac-dev-playbook/config.yml`
 
-#### Install Ansible
-
-`pip install ansible`
-
-#### Run mac-dev-playbook
-
-https://github.com/geerlingguy/mac-dev-playbook
 
 #### Symlinks
 
