@@ -17,7 +17,7 @@
 #### Symlinks
 
 `ln -s ~/github/dotfiles/nvim/* ~/.config/nvim/`\
-`bat` folder to `~/.config/bat`
+`ln -s ~/github/dotfiles/bat/* ~/.config/bat/`
 
 #### Install oh-my-zsh
 
