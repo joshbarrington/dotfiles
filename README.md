@@ -11,6 +11,8 @@
 - https://github.com/geerlingguy/mac-dev-playbook
 - replace contents of `default.config.yml` with `mac-dev-playbook/config.yml`
 
+#### Reset git remote to use SSH
+`git remote set-url origin git@github.com:USERNAME/REPOSITORY.git`
 
 #### Symlinks
 
