@@ -13,7 +13,6 @@
     "typescriptreact"
   ],
   "coc.preferences.formatOnType": true,
-  /* "tsserver.formatOnType": true, */
   "languageserver": {
     "terraform": {
       "command": "/Users/joshua.barrington/tools/terraform-lsp/terraform-lsp",
