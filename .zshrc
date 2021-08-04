@@ -28,16 +28,19 @@ prompt spaceship
 # asdf start up script
 . /usr/local/opt/asdf/asdf.sh
 
-export PATH="/usr/local/sbin:/usr/local/opt/llvm/bin:$PATH"
+# export PATH="/usr/local/sbin:/usr/local/opt/llvm/bin:$PATH"
+
 # go path
-export GOPATH=$HOME/.asdf/installs/golang/1.15/go
-export GOBIN=$HOME/.asdf/installs/golang/1.15/go/bin
+# export GOPATH=$HOME/.asdf/installs/golang/1.15/go
+# export GOBIN=$HOME/.asdf/installs/golang/1.15/go/bin
+
 # path to asdf python
-export PATH=$HOME/.asdf/installs/python/3.8.8/bin:$PATH
+export PATH=$HOME/.asdf/installs/python/3.6.14/bin:$PATH
+
 # path to asdf go
-export PATH=$GOPATH:$GOBIN:$PATH
+# export PATH=$GOPATH:$GOBIN:$PATH
 # rustup
-source "$HOME/.cargo/env"
+# source "$HOME/.cargo/env"
 
 # aliases
 alias tree='tree -I "$(paste -d\| -s ~/.treeignore)"'

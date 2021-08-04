@@ -3,7 +3,9 @@
   "python.linting.pylintEnabled": false,
   "python.linting.flake8Enabled": true,
   "python.linting.enabled": true,
-  "python.linting.flake8Args": ["--max-line-length=120"],
+  "python.linting.flake8Args": [
+    "--max-line-length=100"
+  ],
   "coc.preferences.formatOnSaveFiletypes": [
     "javascript",
     "javascriptreact",
@@ -11,16 +13,23 @@
     "typescriptreact"
   ],
   "coc.preferences.formatOnType": true,
-  "tsserver.formatOnType": true,
+  /* "tsserver.formatOnType": true, */
   "languageserver": {
     "terraform": {
       "command": "/Users/joshua.barrington/tools/terraform-lsp/terraform-lsp",
-      "filetypes": ["terraform"],
+      "filetypes": [
+        "terraform"
+      ],
       "initializationOptions": {}
     },
     "ccls": {
       "command": "ccls",
-      "filetypes": ["c", "cpp", "objc", "objcpp"],
+      "filetypes": [
+        "c",
+        "cpp",
+        "objc",
+        "objcpp"
+      ],
       "rootPatterns": [
         ".ccls",
         "compile_commands.json",

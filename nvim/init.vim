@@ -113,17 +113,6 @@ let g:vim_markdown_conceal = 0
 let g:vim_markdown_conceal_code_blocks = 0
 let g:vim_markdown_folding_disabled = 1
 
-" True colours for fzf preview
-augroup fzf_preview
-  autocmd!
-  autocmd User fzf_preview#initialized call s:fzf_preview_settings()
-augroup END
-
-function! s:fzf_preview_settings() abort
-  let g:fzf_preview_command = 'COLORTERM=truecolor ' . g:fzf_preview_command
-  let g:fzf_preview_grep_preview_cmd = 'COLORTERM=truecolor ' . g:fzf_preview_grep_preview_cmd
-endfunction
-
 " Map \f to CocAction format
 noremap <Leader>f :Format<CR>
 " Map \p to FZF preview project files
@@ -135,5 +124,7 @@ noremap <leader>r :Rg<CR>
 " FZF preview options
 let g:fzf_preview_filelist_command = 'rg --files --hidden --follow --no-messages -g \!"* *"'
 let g:fzf_preview_use_dev_icons = 1
+let g:fzf_preview_command = 'bat  --style=numbers --color=always --line-range :500 {-1}'
+let g:fzf_preview_fzf_preview_window_option = 'nowrap'
 
 command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1, {'options': '--delimiter : --nth 4..'}, <bang>0)
