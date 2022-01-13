@@ -35,7 +35,7 @@ prompt spaceship
 # export GOBIN=$HOME/.asdf/installs/golang/1.15/go/bin
 
 # path to asdf python
-export PATH=$HOME/.asdf/installs/python/3.6.14/bin:$PATH
+export PATH=$HOME/.asdf/installs/python/3.8.12/bin:$PATH
 
 # path to asdf go
 # export PATH=$GOPATH:$GOBIN:$PATH
@@ -44,3 +44,9 @@ export PATH=$HOME/.asdf/installs/python/3.6.14/bin:$PATH
 
 # aliases
 alias tree='tree -I "$(paste -d\| -s ~/.treeignore)"'
+alias run-test-db='docker run -d --rm --name testdb -e POSTGRES_PASSWORD=password -e POSTGRES_DB=testdb -p 5433:5432 postgres'
+
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
+export PATH="/usr/local/sbin:$PATH"

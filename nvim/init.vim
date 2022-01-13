@@ -60,25 +60,23 @@ call plug#begin()
     Plug 'tpope/vim-fugitive'
     Plug 'tpope/vim-commentary'
     Plug 'tpope/vim-rhubarb'
-    Plug 'scrooloose/nerdtree'
     Plug 'vwxyutarooo/nerdtree-devicons-syntax'
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
     Plug 'machakann/vim-highlightedyank'
     Plug 'conradirwin/vim-bracketed-paste'
-    Plug 'ryanoasis/vim-devicons'
     Plug 'morhetz/gruvbox'
     Plug 'wincent/ferret'
     Plug 'pangloss/vim-javascript'
     Plug 'mattn/emmet-vim'
     Plug 'plasticboy/vim-markdown'
     Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+    Plug 'kyazdani42/nvim-web-devicons' " for file icons
+    Plug 'kyazdani42/nvim-tree.lua'
 call plug#end()
 
-" NERDTree
-let NERDTreeShowHidden=1
-" Map CTRL-n to open NERDTree
-map <C-n> :NERDTreeToggle<CR>
+" NvimTree
+map <C-n> :NvimTreeOpen<CR>
 
 " Use `:Format` to format current buffer
 command! -nargs=0 Format :call CocAction('format')
@@ -128,3 +126,5 @@ let g:fzf_preview_command = 'bat  --style=numbers --color=always --line-range :5
 let g:fzf_preview_fzf_preview_window_option = 'nowrap'
 
 command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1, {'options': '--delimiter : --nth 4..'}, <bang>0)
+
+lua require'nvim-tree'.setup {}

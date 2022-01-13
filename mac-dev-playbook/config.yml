@@ -41,6 +41,7 @@ homebrew_installed_packages:
   - fzf
   - fx
   - gh
+  - gcc
   - git
   - httpie
   - hub
@@ -89,6 +90,9 @@ homebrew_cask_apps:
   - keepassxc
   - signal
   - whatsapp
+  - touchdesigner
+  - pgadmin4
+  - nordvpn
 
 # See https://github.com/geerlingguy/mac-dev-playbook for below config options.
 mas_installed_apps: []
