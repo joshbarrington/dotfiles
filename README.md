@@ -12,6 +12,7 @@
 - replace contents of `default.config.yml` with `mac-dev-playbook/config.yml`
 
 #### Reset git remote to use SSH
+
 `git remote set-url origin git@github.com:USERNAME/REPOSITORY.git`
 
 #### Symlinks
@@ -28,6 +29,7 @@
 `npm install -g spaceship-prompt`
 
 #### Vim Plug
+
 ```
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
@@ -46,4 +48,4 @@ For ccls config in coc-settings, see https://github.com/MaskRay/ccls/issues/191
 
 #### CoC Extensions
 
-`coc-prettier` `coc-fzf-preview` `coc-eslint` `coc-tsserver` `coc-python` `coc-json` `coc-html` `coc-go` `coc-cmake` `coc-rust-analyzer`
+`coc-prettier` `coc-fzf-preview` `coc-eslint` `coc-tsserver` `coc-pyright` `coc-json` `coc-html` `coc-go` `coc-cmake` `coc-rust-analyzer`

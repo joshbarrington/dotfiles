@@ -1,11 +1,9 @@
 {
   "python.formatting.provider": "black",
-  "python.linting.pylintEnabled": false,
   "python.linting.flake8Enabled": true,
-  "python.linting.enabled": true,
-  "python.linting.flake8Args": [
-    "--max-line-length=100"
-  ],
+  "python.linting.flake8Args": ["--max-line-length=100"],
+  "python.linting.mypyEnabled": true,
+  "python.linting.pylintEnabled": true,
   "coc.preferences.formatOnSaveFiletypes": [
     "javascript",
     "javascriptreact",
@@ -13,45 +11,5 @@
     "typescriptreact"
   ],
   "coc.preferences.formatOnType": true,
-  "languageserver": {
-    "terraform": {
-      "command": "/Users/joshua.barrington/tools/terraform-lsp/terraform-lsp",
-      "filetypes": [
-        "terraform"
-      ],
-      "initializationOptions": {}
-    },
-    "ccls": {
-      "command": "ccls",
-      "filetypes": [
-        "c",
-        "cpp",
-        "objc",
-        "objcpp"
-      ],
-      "rootPatterns": [
-        ".ccls",
-        "compile_commands.json",
-        ".vim/",
-        ".git/",
-        ".hg/"
-      ],
-      "initializationOptions": {
-        "cache": {
-          "directory": "/tmp/ccls"
-        },
-        "clang": {
-          "extraArgs": [
-            "-isystem/usr/local/include",
-            "-isystem/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1",
-            "-isystem/Library/Developer/CommandLineTools/usr/lib/clang/11.0.0/include",
-            "-isystem/Library/Developer/CommandLineTools/usr/include",
-            "-isystem/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include",
-            "-isystem/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/System/Library/Frameworks"
-          ],
-          "resourceDir": "/Library/Developer/CommandLineTools/usr/lib/clang/10.0.1"
-        }
-      }
-    }
-  }
+  "languageserver": {}
 }
