@@ -2,7 +2,7 @@
 
 [user]
     name = Joshua Barrington
-    email = jb@neurocat.ai
+    email = josh.s.barrington@gmail.com
 
 [merge]
     tool = vimdiff
@@ -24,3 +24,9 @@
 
 [pull]
     rebase = false
+
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process

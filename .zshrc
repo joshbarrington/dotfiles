@@ -10,6 +10,8 @@ plugins=(
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 SKIP_GLOBAL_COMPINIT=1
 
+export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
+
 source $ZSH/oh-my-zsh.sh
 
 # Brew zsh autosuggestions
@@ -28,20 +30,8 @@ prompt spaceship
 # asdf start up script
 . /usr/local/opt/asdf/asdf.sh
 
-# export PATH="/usr/local/sbin:/usr/local/opt/llvm/bin:$PATH"
-
-# go path
-# export GOPATH=$HOME/.asdf/installs/golang/1.15/go
-# export GOBIN=$HOME/.asdf/installs/golang/1.15/go/bin
-
 # path to asdf python
 export PATH=$HOME/.asdf/installs/python/3.8.12/bin:$PATH
-
-# path to asdf go
-# export PATH=$GOPATH:$GOBIN:$PATH
-
-# rustup
-# source "$HOME/.cargo/env"
 
 # aliases
 alias tree='tree -I "$(paste -d\| -s ~/.treeignore)"'

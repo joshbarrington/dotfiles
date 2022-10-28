@@ -10,7 +10,7 @@ dockitems_remove: []
 dockitems_persist: []
 
 configure_sudoers: false
-sudoers_custom_config: ''
+sudoers_custom_config: ""
 
 dotfiles_repo: https://github.com/Joshbarrington/dotfiles.git
 dotfiles_repo_accept_hostkey: true
@@ -58,6 +58,8 @@ homebrew_installed_packages:
   - wget
   - zsh
   - zsh-autosuggestions
+  - youtube-dl
+  - git-lfs
 
 homebrew_taps:
   - homebrew/core

@@ -28,6 +28,8 @@ vnoremap > >gv
 
 " Paste over visual selection
 vnoremap <leader>p "_dP
+nnoremap <leader>d "_d
+xnoremap <leader>d "_d
 
 " Remove trailing whitespace on save of .py files
 autocmd BufWritePre *.py :%s/\s\+$//e
@@ -39,8 +41,10 @@ set signcolumn=yes
 autocmd CursorHold * silent call CocActionAsync('highlight')
 " GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
-nmap <silent> <leader>d :<C-u>CocList diagnostics<cr>
+nmap <silent> <leader>e :<C-u>CocList diagnostics<cr>
 " Use `[g` and `]g` to navigate diagnostics
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
@@ -77,6 +81,7 @@ call plug#end()
 
 " NvimTree
 map <C-n> :NvimTreeOpen<CR>
+map <C-c> :NvimTreeClose<CR>
 
 " Use `:Format` to format current buffer
 command! -nargs=0 Format :call CocAction('format')
@@ -111,13 +116,15 @@ let g:vim_markdown_conceal = 0
 let g:vim_markdown_conceal_code_blocks = 0
 let g:vim_markdown_folding_disabled = 1
 
-" Map \f to CocAction format
 noremap <Leader>f :Format<CR>
-" Map \p to FZF preview project files
+noremap <Leader>i :CocCommand pyright.organizeimports<CR>
 noremap <Leader>p :CocCommand fzf-preview.ProjectFiles<CR>
 noremap <Leader>g :CocCommand fzf-preview.GitFiles<CR>
 noremap <Leader>b :CocCommand fzf-preview.Buffers<CR>
 noremap <leader>r :Rg<CR>
+
+" Add missing imports on save
+autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')
 
 " FZF preview options
 let g:fzf_preview_filelist_command = 'rg --files --hidden --follow --no-messages -g \!"* *"'
