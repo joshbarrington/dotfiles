@@ -74,7 +74,7 @@ call plug#begin()
     Plug 'pangloss/vim-javascript'
     Plug 'mattn/emmet-vim'
     Plug 'plasticboy/vim-markdown'
-    Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+    Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
     Plug 'kyazdani42/nvim-web-devicons' " for file icons
     Plug 'kyazdani42/nvim-tree.lua'
 call plug#end()
@@ -85,6 +85,10 @@ map <C-c> :NvimTreeClose<CR>
 
 " Use `:Format` to format current buffer
 command! -nargs=0 Format :call CocAction('format')
+" Ctrl-Space to open completion list
+inoremap <silent><expr> <c-space> coc#refresh()
+" Use enter to confirm coc completion
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
 
 " Airline 
 let g:airline_theme='gruvbox'

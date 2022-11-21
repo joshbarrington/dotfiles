@@ -49,3 +49,7 @@ For ccls config in coc-settings, see https://github.com/MaskRay/ccls/issues/191
 #### CoC Extensions
 
 `coc-prettier` `coc-fzf-preview` `coc-eslint` `coc-tsserver` `coc-pyright` `coc-json` `coc-html` `coc-go` `coc-cmake` `coc-rust-analyzer`
+
+#### Misc Applications
+
+[Spek](https://github.com/withmorten/spek-alternative/releases)

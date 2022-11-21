@@ -54,12 +54,15 @@ homebrew_installed_packages:
   - rename
   - tig
   - tree
+  - tmuxinator
+  - rustup-init
   - unzip
   - wget
   - zsh
   - zsh-autosuggestions
   - youtube-dl
   - git-lfs
+  - pre-commit
 
 homebrew_taps:
   - homebrew/core
@@ -95,6 +98,8 @@ homebrew_cask_apps:
   - touchdesigner
   - pgadmin4
   - nordvpn
+  - soulseek
+  - rekordbox
 
 # See https://github.com/geerlingguy/mac-dev-playbook for below config options.
 mas_installed_apps: []
