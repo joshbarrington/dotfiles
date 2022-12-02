@@ -63,6 +63,7 @@ homebrew_installed_packages:
   - youtube-dl
   - git-lfs
   - pre-commit
+  - starship
 
 homebrew_taps:
   - homebrew/cask-fonts

@@ -24,9 +24,8 @@
 
 `git clone https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh`
 
-#### Install zsh prompt
-
-`npm install -g spaceship-prompt`
+#### Set Starship icons
+`starship preset nerd-font-symbols > ~/.config/starship.toml`
 
 #### Vim Plug
 
