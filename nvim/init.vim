@@ -27,7 +27,7 @@ vnoremap < <gv
 vnoremap > >gv
 
 " Paste over visual selection
-vnoremap <leader>p "_dP
+vnoremap p "_dP
 nnoremap <leader>d "_d
 xnoremap <leader>d "_d
 

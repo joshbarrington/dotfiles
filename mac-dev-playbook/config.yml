@@ -100,6 +100,7 @@ homebrew_cask_apps:
   - nordvpn
   - soulseek
   - rekordbox
+  - telegram
 
 # See https://github.com/geerlingguy/mac-dev-playbook for below config options.
 mas_installed_apps: []

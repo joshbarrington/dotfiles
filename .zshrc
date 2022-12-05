@@ -22,7 +22,7 @@ source $HOME/.config/broot/launcher/bash/br
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # path to asdf python
-export PATH=$HOME/.asdf/installs/python/3.8.12/bin:$PATH
+export PATH=$HOME/.asdf/installs/python/3.8.10/bin:$PATH
 
 # aliases
 alias tree='tree -I "$(paste -d\| -s ~/.treeignore)"'
