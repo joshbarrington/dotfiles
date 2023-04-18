@@ -25,6 +25,7 @@ dotfiles_files:
 homebrew_installed_packages:
   - aws-shell
   - awscli
+  - colima
   - azure-cli
   - asdf
   - bat
