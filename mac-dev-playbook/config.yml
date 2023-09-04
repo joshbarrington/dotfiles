@@ -19,31 +19,33 @@ dotfiles_files:
   - .gitconfig
   - .gitignoreglobal
   - .osx
-  - .zshrc
   - .treeignore
+  - .wezterm.lua
+  - .zshrc
 
 homebrew_installed_packages:
+  - asdf
   - aws-shell
   - awscli
-  - colima
   - azure-cli
-  - asdf
   - bat
   - broot
   - ccls
   - clang-format
   - cmake
+  - colima
   - ctags
   - curl
   - exa
   - fd
   - ffmpeg
   - fswatch
-  - fzf
   - fx
-  - gh
+  - fzf
   - gcc
+  - gh
   - git
+  - git-lfs
   - httpie
   - hub
   - jq
@@ -51,57 +53,56 @@ homebrew_installed_packages:
   - neovim
   - node
   - openssl
-  - ripgrep
+  - pre-commit
   - rename
-  - tig
-  - tree
-  - tmuxinator
+  - ripgrep
   - rustup-init
+  - starship
+  - tig
+  - tmuxinator
+  - tree
   - unzip
   - wget
+  - youtube-dl
   - zsh
   - zsh-autosuggestions
-  - youtube-dl
-  - git-lfs
-  - pre-commit
-  - starship
 
 homebrew_taps:
   - homebrew/cask-fonts
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
-  - docker
-  - rectangle
-  - firefox
-  - google-chrome
-  - licecap
-  - slack
-  - iterm2
-  - dash
-  - tunnelblick
-  - keybase
-  - spotify
-  - visual-studio-code
-  - postman
-  - font-fira-code
-  - font-fira-code-nerd-font
-  - maccy
-  - vlc
-  - xld
   - audio-hijack
-  - keycastr
   - beardedspice
   - chromedriver
+  - dash
+  - docker
+  - firefox-developer-edition
+  - font-fira-code
+  - font-fira-code-nerd-font
+  - google-chrome
+  - iterm2
   - keepassxc
-  - signal
-  - whatsapp
-  - touchdesigner
-  - pgadmin4
+  - keycastr
+  - licecap
+  - maccy
   - nordvpn
-  - soulseek
+  - pgadmin4
+  - postman
+  - rectangle
   - rekordbox
+  - signal
+  - slack
+  - soulseek
+  - spotify
   - telegram
+  - touchdesigner
+  - tunnelblick
+  - visual-studio-code
+  - vlc
+  - wezterm
+  - whatsapp
+  - xld
 
 # See https://github.com/geerlingguy/mac-dev-playbook for below config options.
 mas_installed_apps: []
