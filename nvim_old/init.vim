@@ -2,7 +2,6 @@ let g:python3_host_prog = "/Users/" . $USER . "/.venv/neovim3/bin/python"
 
 let mapleader = " "
 
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 set termguicolors
 
 set mouse=a
@@ -69,7 +68,7 @@ call plug#begin()
     Plug 'vim-airline/vim-airline-themes'
     Plug 'machakann/vim-highlightedyank'
     Plug 'conradirwin/vim-bracketed-paste'
-    Plug 'morhetz/gruvbox'
+    Plug 'gruvbox-community/gruvbox'
     Plug 'wincent/ferret'
     Plug 'pangloss/vim-javascript'
     Plug 'mattn/emmet-vim'
@@ -121,7 +120,7 @@ let g:vim_markdown_conceal_code_blocks = 0
 let g:vim_markdown_folding_disabled = 1
 
 noremap <Leader>f :Format<CR>
-noremap <Leader>i :CocCommand pyright.organizeimports<CR>
+noremap <Leader>i :CocCommand python.sortImports<CR>
 noremap <Leader>p :CocCommand fzf-preview.ProjectFiles<CR>
 noremap <Leader>g :CocCommand fzf-preview.GitFiles<CR>
 noremap <Leader>b :CocCommand fzf-preview.Buffers<CR>
@@ -135,7 +134,5 @@ let g:fzf_preview_filelist_command = 'rg --files --hidden --follow --no-messages
 let g:fzf_preview_use_dev_icons = 1
 let g:fzf_preview_command = 'bat  --style=numbers --color=always --line-range :500 {-1}'
 let g:fzf_preview_fzf_preview_window_option = 'nowrap'
-
-command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1, {'options': '--delimiter : --nth 4..'}, <bang>0)
 
 lua require'nvim-tree'.setup {}
