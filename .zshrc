@@ -24,13 +24,15 @@ source $HOME/.config/broot/launcher/bash/br
 # path to asdf python
 export PATH=$HOME/.asdf/installs/python/3.8.10/bin:$PATH
 
+export PATH="/Users/joshua.barrington/.local/bin:$PATH"
+export PATH="/usr/local/sbin:$PATH"
+
 # aliases
 alias tree='tree -I "$(paste -d\| -s ~/.treeignore)"'
 
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
-export PATH="/usr/local/sbin:$PATH"
 
 # Starship prompt
 eval "$(starship init zsh)"

@@ -59,7 +59,7 @@ require('lazy').setup({
   },
 
   -- Useful plugin to show you pending keybinds.
-  { 'folke/which-key.nvim',          opts = {} },
+  { 'folke/which-key.nvim',                opts = {} },
 
   {
     'ellisonleao/gruvbox.nvim',
@@ -82,22 +82,13 @@ require('lazy').setup({
     },
   },
 
-  {
-    -- Add indentation guides even on blank lines
-    'lukas-reineke/indent-blankline.nvim',
-    -- Enable `lukas-reineke/indent-blankline.nvim`
-    -- See `:help indent_blankline.txt`
-    opts = {
-      char = '┊',
-      show_trailing_blankline_indent = false,
-    },
-  },
+  { "lukas-reineke/indent-blankline.nvim", main = "ibl",     opts = {} },
 
   -- "gc" to comment visual regions/lines
-  { 'numToStr/Comment.nvim',         opts = {} },
+  { 'numToStr/Comment.nvim',               opts = {} },
 
   -- Fuzzy Finder (files, lsp, etc)
-  { 'nvim-telescope/telescope.nvim', branch = '0.1.x', dependencies = { 'nvim-lua/plenary.nvim' } },
+  { 'nvim-telescope/telescope.nvim',       branch = '0.1.x', dependencies = { 'nvim-lua/plenary.nvim' } },
 
   -- Fuzzy Finder Algorithm which requires local dependencies to be built.
   -- Only load if `make` is available. Make sure you have the system
@@ -121,6 +112,14 @@ require('lazy').setup({
     build = ':TSUpdate',
   },
 
+  {
+    'stevearc/conform.nvim',
+    opts = {
+      formatters_by_ft = {
+        python = { "black" }
+      }
+    },
+  },
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
   --       These are some example plugins that I've included in the kickstart repository.
   --       Uncomment any of the lines below to enable them.
@@ -168,6 +167,8 @@ vim.o.cursorline = true
 vim.o.cursorcolumn = true
 -- Autoindenting
 vim.o.expandtab = true
+-- No wrap
+vim.o.wrap = false
 
 -- [[ Basic Keymaps ]]
 
@@ -206,12 +207,24 @@ require('telescope').setup {
   },
   pickers = {
     live_grep = {
-      additional_args = function ()
+      additional_args = function()
         return { '--hidden', '--follow', '--glob', '!**/.git/*' }
       end
+    },
+    find_files = {
+      hidden = true
     }
   }
 }
+
+-- [[ Conform Formatters ]]
+require("conform").setup({
+  format_on_save = {
+    -- These options will be passed to conform.format()
+    timeout_ms = 500,
+    lsp_fallback = true,
+  },
+})
 
 -- Enable telescope fzf native, if installed
 pcall(require('telescope').load_extension, 'fzf')
@@ -365,6 +378,10 @@ local servers = {
       telemetry = { enable = false },
     },
   },
+  ruff_lsp = {},
+  eslint = {},
+  tsserver = {},
+  jsonls = {},
 }
 
 -- Setup neovim lua configuration
