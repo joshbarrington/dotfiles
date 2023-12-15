@@ -24,6 +24,7 @@ require('lazy').setup({
   'tpope/vim-rhubarb',
   -- Detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
+  'tpope/vim-surround',
   'airblade/vim-gitgutter',
 
   {
@@ -39,6 +40,30 @@ require('lazy').setup({
 
       -- Additional lua configuration, makes nvim stuff amazing!
       'folke/neodev.nvim',
+    },
+  },
+
+  {
+    "theprimeagen/harpoon",
+    branch = "harpoon2",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    config = function()
+      require("harpoon"):setup()
+    end,
+    keys = {
+      { "<leader>ha", function() require("harpoon"):list():append() end,  desc = "Harpoon file", },
+      {
+        "<leader>hm",
+        function()
+          local harpoon = require("harpoon")
+          harpoon.ui:toggle_quick_menu(harpoon:list())
+        end,
+        desc = "Harpoon Menu",
+      },
+      { "<leader>1",  function() require("harpoon"):list():select(1) end, desc = "Harpoon file 1", },
+      { "<leader>2",  function() require("harpoon"):list():select(2) end, desc = "Harpoon file 2", },
+      { "<leader>3",  function() require("harpoon"):list():select(3) end, desc = "Harpoon file 3", },
+      { "<leader>4",  function() require("harpoon"):list():select(4) end, desc = "Harpoon file 4", },
     },
   },
 
@@ -82,13 +107,18 @@ require('lazy').setup({
     },
   },
 
-  { "lukas-reineke/indent-blankline.nvim", main = "ibl",     opts = {} },
+  { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
 
   -- "gc" to comment visual regions/lines
   { 'numToStr/Comment.nvim',               opts = {} },
 
   -- Fuzzy Finder (files, lsp, etc)
-  { 'nvim-telescope/telescope.nvim',       branch = '0.1.x', dependencies = { 'nvim-lua/plenary.nvim' } },
+  {
+    'nvim-telescope/telescope.nvim',
+    branch = '0.1.x',
+    dependencies = { 'nvim-lua/plenary.nvim',
+      "nvim-telescope/telescope-live-grep-args.nvim" },
+  },
 
   -- Fuzzy Finder Algorithm which requires local dependencies to be built.
   -- Only load if `make` is available. Make sure you have the system
@@ -116,10 +146,20 @@ require('lazy').setup({
     'stevearc/conform.nvim',
     opts = {
       formatters_by_ft = {
-        python = { "black" }
+        python = { "black" },
+        -- javascript = { "prettier" },
+        markdown = { "prettier" },
       }
     },
   },
+
+  {
+    "iamcco/markdown-preview.nvim",
+    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+    ft = { "markdown" },
+    build = function() vim.fn["mkdp#util#install"]() end,
+  },
+
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
   --       These are some example plugins that I've included in the kickstart repository.
   --       Uncomment any of the lines below to enable them.
@@ -172,6 +212,10 @@ vim.o.wrap = false
 
 -- [[ Basic Keymaps ]]
 
+-- Continuous visual tabbing
+vim.keymap.set("v", "<", "<gv", { silent = true })
+vim.keymap.set("v", ">", ">gv", { silent = true })
+
 -- Keymaps for better default experience
 -- See `:help vim.keymap.set()`
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
@@ -222,7 +266,7 @@ require("conform").setup({
   format_on_save = {
     -- These options will be passed to conform.format()
     timeout_ms = 500,
-    lsp_fallback = true,
+    lsp_fallback = false,
   },
 })
 
@@ -246,6 +290,7 @@ vim.keymap.set('n', '<leader>sh', require('telescope.builtin').help_tags, { desc
 vim.keymap.set('n', '<leader>sw', require('telescope.builtin').grep_string, { desc = '[S]earch current [W]ord' })
 vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc = '[S]earch by [G]rep' })
 vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
+vim.keymap.set("n", "<leader>fg", ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>")
 
 -- [[ Configure Treesitter ]]
 -- See `:help nvim-treesitter`
@@ -379,7 +424,6 @@ local servers = {
     },
   },
   ruff_lsp = {},
-  eslint = {},
   tsserver = {},
   jsonls = {},
 }
