@@ -66,6 +66,7 @@ homebrew_installed_packages:
   - youtube-dl
   - zsh
   - zsh-autosuggestions
+  - spek
 
 homebrew_taps:
   - homebrew/cask-fonts
@@ -89,13 +90,12 @@ homebrew_cask_apps:
   - nordvpn
   - pgadmin4
   - postman
+  - qbittorrent
   - rectangle
   - rekordbox
-  - signal
   - slack
   - soulseek
   - spotify
-  - telegram
   - touchdesigner
   - tunnelblick
   - visual-studio-code
