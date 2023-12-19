@@ -36,7 +36,7 @@ require('lazy').setup({
       'williamboman/mason-lspconfig.nvim',
       -- Useful status updates for LSP
       -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-      { 'j-hui/fidget.nvim',       tag = 'legacy', opts = {} },
+      { 'j-hui/fidget.nvim', tag = 'legacy', opts = {} },
 
       -- Additional lua configuration, makes nvim stuff amazing!
       'folke/neodev.nvim',
@@ -44,26 +44,56 @@ require('lazy').setup({
   },
 
   {
-    "theprimeagen/harpoon",
-    branch = "harpoon2",
-    dependencies = { "nvim-lua/plenary.nvim" },
+    'theprimeagen/harpoon',
+    branch = 'harpoon2',
+    dependencies = { 'nvim-lua/plenary.nvim' },
     config = function()
-      require("harpoon"):setup()
+      require('harpoon'):setup()
     end,
     keys = {
-      { "<leader>ha", function() require("harpoon"):list():append() end,  desc = "Harpoon file", },
       {
-        "<leader>hm",
+        '<leader>ha',
         function()
-          local harpoon = require("harpoon")
+          require('harpoon'):list():append()
+        end,
+        desc = 'Harpoon file',
+      },
+      {
+        '<leader>hm',
+        function()
+          local harpoon = require 'harpoon'
           harpoon.ui:toggle_quick_menu(harpoon:list())
         end,
-        desc = "Harpoon Menu",
+        desc = 'Harpoon Menu',
       },
-      { "<leader>1",  function() require("harpoon"):list():select(1) end, desc = "Harpoon file 1", },
-      { "<leader>2",  function() require("harpoon"):list():select(2) end, desc = "Harpoon file 2", },
-      { "<leader>3",  function() require("harpoon"):list():select(3) end, desc = "Harpoon file 3", },
-      { "<leader>4",  function() require("harpoon"):list():select(4) end, desc = "Harpoon file 4", },
+      {
+        '<leader>1',
+        function()
+          require('harpoon'):list():select(1)
+        end,
+        desc = 'Harpoon file 1',
+      },
+      {
+        '<leader>2',
+        function()
+          require('harpoon'):list():select(2)
+        end,
+        desc = 'Harpoon file 2',
+      },
+      {
+        '<leader>3',
+        function()
+          require('harpoon'):list():select(3)
+        end,
+        desc = 'Harpoon file 3',
+      },
+      {
+        '<leader>4',
+        function()
+          require('harpoon'):list():select(4)
+        end,
+        desc = 'Harpoon file 4',
+      },
     },
   },
 
@@ -84,7 +114,7 @@ require('lazy').setup({
   },
 
   -- Useful plugin to show you pending keybinds.
-  { 'folke/which-key.nvim',                opts = {} },
+  { 'folke/which-key.nvim', opts = {} },
 
   {
     'ellisonleao/gruvbox.nvim',
@@ -107,17 +137,16 @@ require('lazy').setup({
     },
   },
 
-  { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
+  { 'lukas-reineke/indent-blankline.nvim', main = 'ibl', opts = {} },
 
   -- "gc" to comment visual regions/lines
-  { 'numToStr/Comment.nvim',               opts = {} },
+  { 'numToStr/Comment.nvim', opts = {} },
 
   -- Fuzzy Finder (files, lsp, etc)
   {
     'nvim-telescope/telescope.nvim',
     branch = '0.1.x',
-    dependencies = { 'nvim-lua/plenary.nvim',
-      "nvim-telescope/telescope-live-grep-args.nvim" },
+    dependencies = { 'nvim-lua/plenary.nvim', 'nvim-telescope/telescope-live-grep-args.nvim' },
   },
 
   -- Fuzzy Finder Algorithm which requires local dependencies to be built.
@@ -144,20 +173,31 @@ require('lazy').setup({
 
   {
     'stevearc/conform.nvim',
+    event = { 'BufWritePre' },
     opts = {
       formatters_by_ft = {
-        python = { "black" },
+        lua = { 'stylua' },
+        python = { 'black' },
         -- javascript = { "prettier" },
-        markdown = { "prettier" },
-      }
+        markdown = { 'prettier' },
+      },
     },
+    format_on_save = { timeout_ms = 500, lsp_fallback = true },
   },
 
   {
-    "iamcco/markdown-preview.nvim",
-    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-    ft = { "markdown" },
-    build = function() vim.fn["mkdp#util#install"]() end,
+    'iamcco/markdown-preview.nvim',
+    cmd = { 'MarkdownPreviewToggle', 'MarkdownPreview', 'MarkdownPreviewStop' },
+    ft = { 'markdown' },
+    build = function()
+      vim.fn['mkdp#util#install']()
+    end,
+  },
+
+  {
+    'pmizio/typescript-tools.nvim',
+    dependencies = { 'nvim-lua/plenary.nvim', 'neovim/nvim-lspconfig' },
+    opts = {},
   },
 
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
@@ -178,7 +218,7 @@ require('lazy').setup({
 -- [[ Setting options ]]
 
 -- Appearance
-vim.o.background = "dark"
+vim.o.background = 'dark'
 vim.o.termguicolors = true
 
 -- Make line numbers default
@@ -213,8 +253,8 @@ vim.o.wrap = false
 -- [[ Basic Keymaps ]]
 
 -- Continuous visual tabbing
-vim.keymap.set("v", "<", "<gv", { silent = true })
-vim.keymap.set("v", ">", ">gv", { silent = true })
+vim.keymap.set('v', '<', '<gv', { silent = true })
+vim.keymap.set('v', '>', '>gv', { silent = true })
 
 -- Keymaps for better default experience
 -- See `:help vim.keymap.set()`
@@ -225,7 +265,13 @@ vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = tr
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
 -- Remove trailing whitespace on write
-vim.api.nvim_create_autocmd('BufWritePre', { command = '%s/\\s\\+$//e' })
+-- vim.api.nvim_create_autocmd('BufWritePre', { command = '%s/\\s\\+$//e' })
+vim.api.nvim_create_autocmd('BufWritePre', {
+  pattern = '*',
+  callback = function(args)
+    require('conform').format { bufnr = args.buf }
+  end,
+})
 
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
@@ -253,22 +299,13 @@ require('telescope').setup {
     live_grep = {
       additional_args = function()
         return { '--hidden', '--follow', '--glob', '!**/.git/*' }
-      end
+      end,
     },
     find_files = {
-      hidden = true
-    }
-  }
-}
-
--- [[ Conform Formatters ]]
-require("conform").setup({
-  format_on_save = {
-    -- These options will be passed to conform.format()
-    timeout_ms = 500,
-    lsp_fallback = false,
+      hidden = true,
+    },
   },
-})
+}
 
 -- Enable telescope fzf native, if installed
 pcall(require('telescope').load_extension, 'fzf')
@@ -290,13 +327,13 @@ vim.keymap.set('n', '<leader>sh', require('telescope.builtin').help_tags, { desc
 vim.keymap.set('n', '<leader>sw', require('telescope.builtin').grep_string, { desc = '[S]earch current [W]ord' })
 vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc = '[S]earch by [G]rep' })
 vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
-vim.keymap.set("n", "<leader>fg", ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>")
+vim.keymap.set('n', '<leader>fg', ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>")
 
 -- [[ Configure Treesitter ]]
 -- See `:help nvim-treesitter`
 require('nvim-treesitter.configs').setup {
   -- Add languages to be installed here that you want installed for treesitter
-  ensure_installed = { 'go', 'lua', 'python', 'rust', 'tsx', 'typescript', },
+  ensure_installed = { 'go', 'lua', 'python', 'rust', 'tsx', 'typescript' },
 
   -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
   auto_install = false,
@@ -411,7 +448,7 @@ end
 
 -- Enable the following language servers
 --  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
---
+
 --  Additional override configuration for each lsp
 local servers = {
   pyright = {},
@@ -424,7 +461,6 @@ local servers = {
     },
   },
   ruff_lsp = {},
-  tsserver = {},
   jsonls = {},
 }
 
@@ -434,7 +470,6 @@ require('neodev').setup()
 -- nvim-cmp supports additional completion capabilities, so broadcast that to servers
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
-
 
 -- Ensure the servers above are installed
 local mason_lspconfig = require 'mason-lspconfig'
