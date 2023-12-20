@@ -174,15 +174,17 @@ require('lazy').setup({
   {
     'stevearc/conform.nvim',
     event = { 'BufWritePre' },
+    cmd = { 'ConformInfo' },
     opts = {
       formatters_by_ft = {
         lua = { 'stylua' },
         python = { 'black' },
-        -- javascript = { "prettier" },
+        javascript = { 'prettier' },
+        typescript = { 'prettier' },
         markdown = { 'prettier' },
       },
+      format_on_save = { timeout_ms = 500, lsp_fallback = true },
     },
-    format_on_save = { timeout_ms = 500, lsp_fallback = true },
   },
 
   {
@@ -265,13 +267,7 @@ vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = tr
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
 -- Remove trailing whitespace on write
--- vim.api.nvim_create_autocmd('BufWritePre', { command = '%s/\\s\\+$//e' })
-vim.api.nvim_create_autocmd('BufWritePre', {
-  pattern = '*',
-  callback = function(args)
-    require('conform').format { bufnr = args.buf }
-  end,
-})
+vim.api.nvim_create_autocmd('BufWritePre', { command = '%s/\\s\\+$//e' })
 
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
@@ -336,7 +332,7 @@ require('nvim-treesitter.configs').setup {
   ensure_installed = { 'go', 'lua', 'python', 'rust', 'tsx', 'typescript' },
 
   -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
-  auto_install = false,
+  auto_install = true,
 
   highlight = { enable = true },
   indent = { enable = true },
