@@ -19,13 +19,18 @@ config.keys = {
   {
     key = 'w',
     mods = 'CMD',
-    action = wezterm.action.CloseCurrentPane { confirm = false }, 
-  }
+    action = wezterm.action.CloseCurrentPane { confirm = false },
+  },
+  { key = 'LeftArrow', mods = 'CMD|ALT', action = wezterm.action.ActivatePaneDirection 'Left' },
+  { key = 'RightArrow', mods = 'CMD|ALT', action = wezterm.action.ActivatePaneDirection 'Right' },
+  { key = 'DownArrow', mods = 'CMD|ALT', action = wezterm.action.ActivatePaneDirection 'Down' },
+  { key = 'UpArrow', mods = 'CMD|ALT', action = wezterm.action.ActivatePaneDirection 'Up' },
+  { key = 'Enter', mods = 'CMD|SHIFT', action = wezterm.action.TogglePaneZoomState },
 }
 
 config.color_scheme = 'GruvboxDarkHard'
 config.colors = {
-  foreground = 'bdbbb4', 
+  foreground = 'bdbbb4',
   background = '282727',
   ansi = {
     '282727', -- black
