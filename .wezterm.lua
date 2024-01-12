@@ -26,7 +26,8 @@ config.keys = {
     { mods = 'CMD', key = 'Backspace', action = action.SendKey { mods = 'CTRL', key = 'u' } },
 }
 
-config.color_scheme = 'GruvboxDarkHard'
+config.color_scheme = 'Gruvbox dark, hard (base16)'
+
 config.colors = {
     foreground = 'bdbbb4',
     background = '282727',
@@ -51,6 +52,13 @@ config.colors = {
         'bdbbb4', -- white
     },
 }
+
+config.bold_brightens_ansi_colors = true
+config.inactive_pane_hsb = {
+    saturation = 1,
+    brightness = 0.7,
+}
+config.hide_tab_bar_if_only_one_tab = true
 
 config.font = wezterm.font 'FiraCode Nerd Font Mono'
 config.font_size = 14
