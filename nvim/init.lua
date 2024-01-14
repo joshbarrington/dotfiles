@@ -1,5 +1,5 @@
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
+require 'keymaps'
+require 'settings'
 
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
 if not vim.loop.fs_stat(lazypath) then
@@ -18,8 +18,15 @@ require('lazy').setup({
   'tpope/vim-fugitive',
   'tpope/vim-rhubarb',
   'tpope/vim-sleuth',
-  'tpope/vim-surround',
   'airblade/vim-gitgutter',
+  {
+    'kylechui/nvim-surround',
+    version = '*',
+    event = 'VeryLazy',
+    config = function()
+      require('nvim-surround').setup {}
+    end,
+  },
 
   {
     'neovim/nvim-lspconfig',
@@ -176,55 +183,6 @@ require('lazy').setup({
 
   { import = 'plugins' },
 }, {})
-
--- [[ Setting options ]]
-
--- Appearance
-vim.o.background = 'dark'
-vim.o.termguicolors = true
-
--- Make line numbers default
-vim.wo.number = true
--- Enable mouse mode
-vim.o.mouse = 'a'
--- Sync clipboard between OS and Neovim.
-vim.o.clipboard = 'unnamedplus'
--- Enable break indent
-vim.o.breakindent = true
--- Save undo history
-vim.o.undofile = true
--- Case-insensitive searching
-vim.o.ignorecase = true
-vim.o.smartcase = true
--- Keep signcolumn on by default
-vim.wo.signcolumn = 'yes'
--- Decrease update time
-vim.o.updatetime = 250
-vim.o.timeout = true
-vim.o.timeoutlen = 300
--- Set completeopt to have a better completion experience
-vim.o.completeopt = 'menuone,noselect'
--- Show cursor positon
-vim.o.cursorline = true
-vim.o.cursorcolumn = true
--- Autoindenting
-vim.o.expandtab = true
--- No wrap
-vim.o.wrap = false
-
--- [[ Basic Keymaps ]]
-
--- Continuous visual tabbing
-vim.keymap.set('v', '<', '<gv', { silent = true })
-vim.keymap.set('v', '>', '>gv', { silent = true })
-
--- Keymaps for better default experience
--- See `:help vim.keymap.set()`
-vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
-
--- Remap for dealing with word wrap
-vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
-vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
 -- Remove trailing whitespace on write
 vim.api.nvim_create_autocmd('BufWritePre', { command = '%s/\\s\\+$//e' })
