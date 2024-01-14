@@ -1,32 +1,33 @@
-# This is Git's per-user configuration file.
-
 [user]
     name = Joshua Barrington
-    email = josh.s.barrington@gmail.com
+    email = joshsbarrington@gmail.com
+
+[core]
+    editor = nvim
+    pager = delta
+    excludesfile = ~/.gitignoreglobal
+
+[delta]
+    navigate = true
+    syntax-theme = gruvbox-dark
+
+[interactive]
+    diffFilter = delta --color-only
 
 [merge]
-    tool = vimdiff
     conflictstyle = diff3
-
-[mergetool "vimdiff"]
-    cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
-    prompt = false
-
-[diff]
-    tool = vimdiff
 
 [hub]
     protocol = ssh
 
-[core]
-    editor = nvim
-    excludesfile = ~/.gitignoreglobal
-
 [pull]
     rebase = false
 
+[push]
+    autoSetupRemote = true
+
 [filter "lfs"]
-	required = true
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
+    process = git-lfs filter-process
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    required = true
