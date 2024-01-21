@@ -143,7 +143,6 @@ require('lazy').setup({
 
   {
     'stevearc/conform.nvim',
-    event = { 'BufWritePre' },
     cmd = { 'ConformInfo' },
     opts = {
       formatters_by_ft = {
@@ -153,7 +152,16 @@ require('lazy').setup({
         -- typescript = { 'prettier' },
         markdown = { 'prettier' },
       },
-      format_on_save = { timeout_ms = 500, lsp_fallback = true },
+    },
+    keys = {
+      {
+        '<leader>bf',
+        function()
+          require('conform').format { async = true, lsp_fallback = true }
+        end,
+        mode = 'n',
+        desc = '[F]ormat buffer',
+      },
     },
   },
 
