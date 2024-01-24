@@ -2,6 +2,12 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 vim.o.background = 'dark'
 vim.o.termguicolors = true
+-- Shift width
+vim.o.sw = 4
+-- Tabstop
+vim.o.ts = 4
+-- Expand tab
+vim.o.et = true
 -- Make line numbers default
 vim.wo.number = true
 -- Enable mouse mode

@@ -7,3 +7,10 @@ vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = tr
 -- Keeping the cursor centered.
 vim.keymap.set('n', '<C-d>', '<C-d>zz', { desc = 'Scroll downwards' })
 vim.keymap.set('n', '<C-u>', '<C-u>zz', { desc = 'Scroll upwards' })
+-- Move visual selection
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+-- Paste without delete
+vim.keymap.set("x", "p", [["_dP]])
+-- Delete without yank
+vim.keymap.set("x", "d", [["_d]])
