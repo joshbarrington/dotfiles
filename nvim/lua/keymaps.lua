@@ -13,4 +13,4 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 -- Paste without delete
 vim.keymap.set("x", "p", [["_dP]])
 -- Delete without yank
-vim.keymap.set("x", "d", [["_d]])
+vim.keymap.set("x", "<leader>d", [["_d]])
