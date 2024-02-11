@@ -53,6 +53,7 @@ homebrew_installed_packages:
   - hub
   - jq
   - mas
+  - mise
   - neovim
   - node
   - openssl

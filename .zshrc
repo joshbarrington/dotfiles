@@ -25,10 +25,6 @@ source $HOME/.config/broot/launcher/bash/br
 # Fuzzy Finder
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# path(s) to asdf installs
-export PATH=$HOME/.asdf/installs/python/3.8.10/bin:$PATH
-export PATH=$HOME/.asdf/installs/nodejs/16.20.2/bin:$PATH
-
 # path
 export PATH="/Users/joshua.barrington/.local/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
@@ -37,3 +33,6 @@ export PATH="/usr/local/sbin:$PATH"
 alias tree='tree -I "$(paste -d\| -s ~/.treeignore)"'
 alias lg='lazygit'
 alias cd='z' # cd to (z)oxide
+
+# mise for version management
+eval "$(mise activate zsh)"

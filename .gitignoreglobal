@@ -4,3 +4,4 @@
 *.pyc
 .tool-versions
 node_modules
+.mise.toml
