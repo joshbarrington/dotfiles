@@ -49,7 +49,7 @@ require('lazy').setup({
           local harpoon = require 'harpoon'
           harpoon.ui:toggle_quick_menu(harpoon:list())
         end,
-        desc = 'Harpoon Menu',
+        desc = 'Harpoon menu',
       },
       {
         '<leader>1',
