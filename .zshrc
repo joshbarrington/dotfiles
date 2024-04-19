@@ -33,6 +33,7 @@ export PATH="/usr/local/sbin:$PATH"
 alias tree='tree -I "$(paste -d\| -s ~/.treeignore)"'
 alias lg='lazygit'
 alias cd='z' # cd to (z)oxide
+alias nv='nvim .'
 
 # mise for version management
 eval "$(mise activate zsh)"
