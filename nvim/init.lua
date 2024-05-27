@@ -388,7 +388,18 @@ end
 
 --  Additional override configuration for each lsp
 local servers = {
-  pyright = {},
+  -- pyright = {},
+  pylsp = {
+    pylsp = {
+      plugins = {
+        autopep8 = { enabled = false },
+        pyflakes = { enabled = false },
+        pycodestyle = { enabled = false },
+        yapf = { enabled = false },
+        mccabe = { enabled = false },
+      },
+    },
+  },
   rust_analyzer = {},
   taplo = {}, -- toml
   lua_ls = {
