@@ -31,3 +31,4 @@
 #### Misc Applications
 
 [Spek](https://github.com/withmorten/spek-alternative/releases)
+[FakinTheFunk](https://fakinthefunk.net/en/)
