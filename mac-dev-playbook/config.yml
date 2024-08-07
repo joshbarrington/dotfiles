@@ -75,8 +75,7 @@ homebrew_installed_packages:
   - zsh
   - zsh-autosuggestions
 
-homebrew_taps:
-  - homebrew/cask-fonts
+homebrew_taps: []
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
