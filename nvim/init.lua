@@ -97,15 +97,9 @@ require('lazy').setup({
     'folke/which-key.nvim',
     config = function()
       local wk = require 'which-key'
-      wk.register {
-        y = {
-          name = 'Yank',
-          p = {
-            "<cmd>let @+ = expand('%:~:.')<cr> <cmd><cr>",
-            'Relative Path',
-          },
-          a = { '<cmd>%y<cr>', 'Buffer contents' },
-        },
+      wk.add {
+        { '<leader>ya', '<cmd>%y<cr>', desc = 'Buffer contents' },
+        { '<leader>yp', "<cmd>let @+ = expand('%:~:.')<cr> <cmd><cr>", desc = 'Relative Path' },
       }
     end,
   },
