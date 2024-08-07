@@ -1,6 +1,4 @@
 ---
-downloads: ~/.ansible-downloads/
-
 configure_dotfiles: true
 configure_terminal: false
 configure_osx: true
@@ -10,7 +8,7 @@ dockitems_remove: []
 dockitems_persist: []
 
 configure_sudoers: false
-sudoers_custom_config: ""
+sudoers_custom_config: ''
 
 dotfiles_repo: https://github.com/joshbarrington/dotfiles.git
 dotfiles_repo_accept_hostkey: true
@@ -21,6 +19,7 @@ dotfiles_files:
   - .osx
   - .treeignore
   - .wezterm.lua
+  - .tmux.conf
   - .zshrc
 
 homebrew_installed_packages:
@@ -38,7 +37,6 @@ homebrew_installed_packages:
   - ctags
   - curl
   - entr
-  - exa
   - fd
   - ffmpeg
   - fswatch
@@ -84,7 +82,7 @@ homebrew_cask_apps:
   - chromedriver
   - dash
   - docker
-  - firefox-developer-edition
+  - firefox@developer-edition
   - font-fira-code
   - font-fira-code-nerd-font
   - google-chrome
@@ -110,12 +108,12 @@ homebrew_cask_apps:
   - whatsapp
   - xld
 
-# See https://github.com/geerlingguy/mac-dev-playbook for below config options.
+# See `geerlingguy.mas` role documentation for usage instructions.
 mas_installed_apps: []
 mas_email: ""
 mas_password: ""
 
-osx_script: "sudo bash ~/.osx --no-restart"
+osx_script: "~/.osx --no-restart"
 
 composer_packages: []
 
