@@ -23,7 +23,6 @@ dotfiles_files:
   - .zshrc
 
 homebrew_installed_packages:
-  - asdf
   - aws-shell
   - awscli
   - azure-cli
@@ -60,7 +59,7 @@ homebrew_installed_packages:
   - pre-commit
   - rename
   - ripgrep
-  - rustup-init
+  - rustup
   - spek
   - starship
   - tig
