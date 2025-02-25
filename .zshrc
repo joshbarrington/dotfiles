@@ -22,8 +22,8 @@ source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 # Broot
 source $HOME/.config/broot/launcher/bash/br
 
-# Fuzzy Finder
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
 
 # path
 export PATH="/Users/joshua.barrington/.local/bin:$PATH"
