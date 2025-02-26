@@ -10,9 +10,14 @@ vim.keymap.set('n', '<C-u>', '<C-u>zz', { desc = 'Scroll upwards' })
 vim.keymap.set('n', 'n', 'nzzzv', { desc = 'Next result' })
 vim.keymap.set('n', 'N', 'Nzzzv', { desc = 'Previous result' })
 -- Move visual selection
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
-vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
+vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
 -- Paste without delete
-vim.keymap.set("x", "p", [["_dP]])
+vim.keymap.set('x', 'p', [["_dP]])
 -- Delete without yank
-vim.keymap.set("x", "<leader>d", [["_d]])
+vim.keymap.set('x', '<leader>d', [["_d]])
+-- Map Ctrl + Option + h/j/k/l for pane navigation
+vim.keymap.set('n', '<C-M-h>', '<C-w>h', { desc = "Move to left pane" })  -- Ctrl + Option + h (left)
+vim.keymap.set('n', '<C-M-j>', '<C-w>j', { desc = "Move to bottom pane" }) -- Ctrl + Option + j (down)
+vim.keymap.set('n', '<C-M-k>', '<C-w>k', { desc = "Move to top pane" })    -- Ctrl + Option + k (up)
+vim.keymap.set('n', '<C-M-l>', '<C-w>l', { desc = "Move to right pane" })  -- Ctrl + Option + l (right)
