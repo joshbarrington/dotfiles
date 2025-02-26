@@ -263,11 +263,11 @@ vim.keymap.set('n', '<leader>fg', ":lua require('telescope').extensions.live_gre
 -- [[ Configure Treesitter ]]
 -- See `:help nvim-treesitter`
 
-require 'nvim-treesitter.install'.compilers = { "clang" }
+require('nvim-treesitter.install').compilers = { 'clang' }
 
 require('nvim-treesitter.configs').setup {
   -- Add languages to be installed here that you want installed for treesitter
-  ensure_installed = { 'go', 'lua', 'python', 'rust', 'tsx', 'typescript', 'markdown', 'yaml', 'toml'},
+  ensure_installed = { 'go', 'lua', 'python', 'rust', 'tsx', 'typescript', 'markdown', 'yaml', 'toml', 'gomod' },
 
   -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
   auto_install = true,

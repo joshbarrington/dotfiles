@@ -37,3 +37,6 @@ alias nv='nvim .'
 
 # mise for version management
 eval "$(mise activate zsh)"
+
+# !k7
+[ -f ~/k7-files/.k7 ] && source ~/k7-files/.k7
