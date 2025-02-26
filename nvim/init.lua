@@ -90,7 +90,11 @@ require('lazy').setup({
       'saadparwaiz1/cmp_luasnip',
       'hrsh7th/cmp-nvim-lsp',
       'rafamadriz/friendly-snippets',
+      'onsails/lspkind.nvim',
     },
+    config = function()
+      require('lspkind').init()
+    end,
   },
 
   {
@@ -436,6 +440,7 @@ mason_lspconfig.setup_handlers {
 -- [[ Configure nvim-cmp ]]
 -- See `:help cmp`
 local cmp = require 'cmp'
+local lspkind = require 'lspkind'
 local luasnip = require 'luasnip'
 require('luasnip.loaders.from_vscode').lazy_load()
 luasnip.config.setup {}
@@ -478,5 +483,13 @@ cmp.setup {
   sources = {
     { name = 'nvim_lsp' },
     { name = 'luasnip' },
+    { name = 'copilot' },
+  },
+  formatting = {
+    format = lspkind.cmp_format {
+      mode = 'symbol',
+      max_width = 50,
+      symbol_map = { Copilot = '' },
+    },
   },
 }
