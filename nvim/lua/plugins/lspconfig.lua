@@ -41,6 +41,12 @@ return {
       end
 
       local servers = {
+        gopls = {
+          gofumpt = true,
+          staticcheck = true,
+          completeUnimported = true,
+          usePlaceholders = true,
+        },
         pyright = {},
         rust_analyzer = {},
         taplo = {}, -- toml

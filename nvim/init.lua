@@ -163,6 +163,7 @@ require('lazy').setup({
         -- javascript = { 'prettier' },
         -- typescript = { 'prettier' },
         markdown = { 'prettier' },
+        go = { 'goimports' },
       },
     },
     keys = {
