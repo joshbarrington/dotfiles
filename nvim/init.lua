@@ -18,6 +18,7 @@ require('lazy').setup({
   'tpope/vim-fugitive',
   'tpope/vim-rhubarb',
   'airblade/vim-gitgutter',
+  'shumphrey/fugitive-gitlab.vim',
 
   {
     'kylechui/nvim-surround',
@@ -91,6 +92,7 @@ require('lazy').setup({
       'hrsh7th/cmp-nvim-lsp',
       'rafamadriz/friendly-snippets',
       'onsails/lspkind.nvim',
+      'hrsh7th/cmp-path',
     },
     config = function()
       require('lspkind').init()
@@ -112,6 +114,17 @@ require('lazy').setup({
     'ellisonleao/gruvbox.nvim',
     priority = 1000,
     config = function()
+      require('gruvbox').setup {
+        -- overrides = {
+        --   SignColumn = { bg = '#282828' },
+        --   -- FoldColumn = { bg = '#282828' },
+        --   LineNr = { bg = '#282828' },
+        --   CursorLineNr = { bg = '#282828' },
+        --   GitSignsAdd = { bg = '#282828' },
+        --   GitSignsChange = { bg = '#282828' },
+        --   GitSignsDelete = { bg = '#282828' },
+        -- },
+      }
       vim.cmd.colorscheme 'gruvbox'
     end,
   },
@@ -485,6 +498,7 @@ cmp.setup {
     { name = 'nvim_lsp' },
     { name = 'luasnip' },
     { name = 'copilot' },
+    { name = 'path' },
   },
   formatting = {
     format = lspkind.cmp_format {
