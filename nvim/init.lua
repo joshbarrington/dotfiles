@@ -21,6 +21,11 @@ require('lazy').setup({
   'shumphrey/fugitive-gitlab.vim',
 
   {
+    'JezerM/oil-lsp-diagnostics.nvim',
+    opts = {},
+  },
+
+  {
     'kylechui/nvim-surround',
     version = '*',
     event = 'VeryLazy',
