@@ -36,6 +36,7 @@ homebrew_installed_packages:
   - ctags
   - curl
   - entr
+  - eza
   - fd
   - ffmpeg
   - fswatch
