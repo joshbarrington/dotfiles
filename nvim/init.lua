@@ -40,52 +40,37 @@ require('lazy').setup({
     dependencies = { 'nvim-lua/plenary.nvim' },
     config = function()
       require('harpoon'):setup()
+      require('harpoon'):extend(require('harpoon.extensions').builtins.command_on_nav 'UfoEnableFold')
     end,
-    keys = {
-      {
-        '<leader>ha',
-        function()
-          require('harpoon'):list():append()
-        end,
-        desc = 'Harpoon file',
-      },
-      {
-        '<leader>hm',
-        function()
-          local harpoon = require 'harpoon'
-          harpoon.ui:toggle_quick_menu(harpoon:list())
-        end,
-        desc = 'Harpoon menu',
-      },
-      {
-        '<leader>1',
-        function()
-          require('harpoon'):list():select(1)
-        end,
-        desc = 'Harpoon file 1',
-      },
-      {
-        '<leader>2',
-        function()
-          require('harpoon'):list():select(2)
-        end,
-        desc = 'Harpoon file 2',
-      },
-      {
-        '<leader>3',
-        function()
-          require('harpoon'):list():select(3)
-        end,
-        desc = 'Harpoon file 3',
-      },
-      {
-        '<leader>4',
-        function()
-          require('harpoon'):list():select(4)
-        end,
-        desc = 'Harpoon file 4',
-      },
-    },
+    keys = (function()
+      local mappings = {
+        {
+          '<leader>ha',
+          function()
+            require('harpoon'):list():append()
+          end,
+          desc = 'Harpoon [a]dd file',
+        },
+        {
+          '<leader>hm',
+          function()
+            local harpoon = require 'harpoon'
+            harpoon.ui:toggle_quick_menu(harpoon:list())
+          end,
+          desc = 'Harpoon [m]enu',
+        },
+      }
+      for i = 1, 6 do
+        table.insert(mappings, {
+          '<leader>' .. i,
+          function()
+            require('harpoon'):list():select(i)
+          end,
+          desc = 'Harpoon file ' .. i,
+        })
+      end
+      return mappings
+    end)(),
   },
 
   {
@@ -203,12 +188,6 @@ require('lazy').setup({
     build = function()
       vim.fn['mkdp#util#install']()
     end,
-  },
-
-  {
-    'pmizio/typescript-tools.nvim',
-    dependencies = { 'nvim-lua/plenary.nvim', 'neovim/nvim-lspconfig' },
-    opts = {},
   },
 
   {
@@ -430,6 +409,8 @@ local servers = {
   },
   ruff = {},
   jsonls = {},
+  gopls = {},
+  vtsls = {},
 }
 
 -- Setup neovim lua configuration
