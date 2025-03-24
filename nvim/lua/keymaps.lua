@@ -22,7 +22,9 @@ vim.keymap.set('n', 'X', '"_X', { noremap = true, silent = true })
 vim.keymap.set('n', 'dd', '"_dd', { noremap = true, silent = true })
 vim.keymap.set('v', 'd', '"_d', { noremap = true, silent = true })
 -- Map Ctrl + Option + h/j/k/l for pane navigation
-vim.keymap.set('n', '<C-M-h>', '<C-w>h', { desc = "Move to left pane" })  -- Ctrl + Option + h (left)
-vim.keymap.set('n', '<C-M-j>', '<C-w>j', { desc = "Move to bottom pane" }) -- Ctrl + Option + j (down)
-vim.keymap.set('n', '<C-M-k>', '<C-w>k', { desc = "Move to top pane" })    -- Ctrl + Option + k (up)
-vim.keymap.set('n', '<C-M-l>', '<C-w>l', { desc = "Move to right pane" })  -- Ctrl + Option + l (right)
+vim.keymap.set('n', '<C-M-h>', '<C-w>h', { desc = 'Move to left pane' }) -- Ctrl + Option + h (left)
+vim.keymap.set('n', '<C-M-j>', '<C-w>j', { desc = 'Move to bottom pane' }) -- Ctrl + Option + j (down)
+vim.keymap.set('n', '<C-M-k>', '<C-w>k', { desc = 'Move to top pane' }) -- Ctrl + Option + k (up)
+vim.keymap.set('n', '<C-M-l>', '<C-w>l', { desc = 'Move to right pane' }) -- Ctrl + Option + l (right)
+-- Git diff
+vim.keymap.set('n', '<leader>gd', ':Gvdiffsplit<CR>', { desc = '[G]it [D]iff', silent = true })

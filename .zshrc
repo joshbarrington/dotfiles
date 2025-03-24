@@ -39,6 +39,7 @@ alias nv='nvim .'
 eval "$(mise activate zsh)"
 
 alias deepseek='llm -m deepseek'
+alias gemini='llm -m gemini'
 
 # !k7
 [ -f ~/k7-files/.k7 ] && source ~/k7-files/.k7
