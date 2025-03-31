@@ -1,6 +1,7 @@
 return {
   'saghen/blink.cmp',
-  dependencies = { 'fang2hou/blink-copilot' },
+  dependencies = { 'giuxtaposition/blink-cmp-copilot' },
+  version = '1.*',
   opts = {
     keymap = {
       preset = 'enter',
@@ -15,7 +16,7 @@ return {
       list = {
         selection = {
           preselect = true,
-          auto_insert = false,
+          auto_insert = true,
         },
       },
       trigger = {
@@ -28,7 +29,7 @@ return {
       providers = {
         copilot = {
           name = 'copilot',
-          module = 'blink-copilot',
+          module = 'blink-cmp-copilot',
           score_offset = 100,
           async = true,
         },
