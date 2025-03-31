@@ -34,11 +34,14 @@ alias tree='tree -I "$(paste -d\| -s ~/.treeignore)"'
 alias lg='lazygit'
 alias cd='z' # cd to (z)oxide
 alias nv='nvim .'
+alias T='eza -T'
 
 # mise for version management
 eval "$(mise activate zsh)"
 
+# openrouter llm
 alias deepseek='llm -m deepseek'
+alias gemini-flash='llm -m gemini-flash'
 alias gemini='llm -m gemini'
 
 # !k7

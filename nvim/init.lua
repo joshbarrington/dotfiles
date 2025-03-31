@@ -17,6 +17,7 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
   'tpope/vim-fugitive',
   'tpope/vim-rhubarb',
+  'tpope/vim-sleuth',
   'airblade/vim-gitgutter',
   'shumphrey/fugitive-gitlab.vim',
 
@@ -47,7 +48,7 @@ require('lazy').setup({
         {
           '<leader>ha',
           function()
-            require('harpoon'):list():append()
+            require('harpoon'):list():add()
           end,
           desc = 'Harpoon [a]dd file',
         },
@@ -240,70 +241,11 @@ vim.keymap.set('n', '<leader>fg', ":lua require('telescope').extensions.live_gre
 -- [[ Configure Treesitter ]]
 -- See `:help nvim-treesitter`
 
-require('nvim-treesitter.install').compilers = { 'clang' }
-
 require('nvim-treesitter.configs').setup {
-  -- Add languages to be installed here that you want installed for treesitter
   ensure_installed = { 'go', 'lua', 'python', 'rust', 'tsx', 'typescript', 'markdown', 'yaml', 'toml', 'gomod' },
-
-  -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
   auto_install = true,
-
   highlight = { enable = true },
   indent = { enable = true },
-  incremental_selection = {
-    enable = true,
-    keymaps = {
-      init_selection = '<c-space>',
-      node_incremental = '<c-space>',
-      scope_incremental = '<c-s>',
-      node_decremental = '<M-space>',
-    },
-  },
-  textobjects = {
-    select = {
-      enable = true,
-      lookahead = true, -- Automatically jump forward to textobj, similar to targets.vim
-      keymaps = {
-        -- You can use the capture groups defined in textobjects.scm
-        ['aa'] = '@parameter.outer',
-        ['ia'] = '@parameter.inner',
-        ['af'] = '@function.outer',
-        ['if'] = '@function.inner',
-        ['ac'] = '@class.outer',
-        ['ic'] = '@class.inner',
-      },
-    },
-    move = {
-      enable = true,
-      set_jumps = true, -- whether to set jumps in the jumplist
-      goto_next_start = {
-        [']m'] = '@function.outer',
-        [']]'] = '@class.outer',
-      },
-      goto_next_end = {
-        [']M'] = '@function.outer',
-        [']['] = '@class.outer',
-      },
-      goto_previous_start = {
-        ['[m'] = '@function.outer',
-        ['[['] = '@class.outer',
-      },
-      goto_previous_end = {
-        ['[M'] = '@function.outer',
-        ['[]'] = '@class.outer',
-      },
-    },
-    swap = {
-      enable = true,
-      swap_next = {
-        ['<leader>a'] = '@parameter.inner',
-      },
-      swap_previous = {
-        ['<leader>A'] = '@parameter.inner',
-      },
-    },
-  },
 }
 
 -- Diagnostic keymaps
