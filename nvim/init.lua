@@ -18,7 +18,6 @@ require('lazy').setup({
   'tpope/vim-fugitive',
   'tpope/vim-rhubarb',
   'tpope/vim-sleuth',
-  'airblade/vim-gitgutter',
   'shumphrey/fugitive-gitlab.vim',
 
   {
