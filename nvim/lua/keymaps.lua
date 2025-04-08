@@ -16,15 +16,15 @@ vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
 vim.keymap.set('x', 'p', [["_dP]])
 -- Delete without yank
 vim.keymap.set('x', '<leader>d', [["_d]])
--- -- Map delete operations to use the black hole register
--- vim.keymap.set('n', 'x', '"_x', { noremap = true, silent = true })
--- vim.keymap.set('n', 'X', '"_X', { noremap = true, silent = true })
--- vim.keymap.set('n', 'dd', '"_dd', { noremap = true, silent = true })
--- vim.keymap.set('v', 'd', '"_d', { noremap = true, silent = true })
 -- Map Ctrl + Option + h/j/k/l for pane navigation
-vim.keymap.set('n', '<C-M-h>', '<C-w>h', { desc = 'Move to left pane' }) -- Ctrl + Option + h (left)
+vim.keymap.set('n', '<C-M-h>', '<C-w>h', { desc = 'Move to left pane' })   -- Ctrl + Option + h (left)
 vim.keymap.set('n', '<C-M-j>', '<C-w>j', { desc = 'Move to bottom pane' }) -- Ctrl + Option + j (down)
-vim.keymap.set('n', '<C-M-k>', '<C-w>k', { desc = 'Move to top pane' }) -- Ctrl + Option + k (up)
-vim.keymap.set('n', '<C-M-l>', '<C-w>l', { desc = 'Move to right pane' }) -- Ctrl + Option + l (right)
+vim.keymap.set('n', '<C-M-k>', '<C-w>k', { desc = 'Move to top pane' })    -- Ctrl + Option + k (up)
+vim.keymap.set('n', '<C-M-l>', '<C-w>l', { desc = 'Move to right pane' })  -- Ctrl + Option + l (right)
 -- Git diff
 vim.keymap.set('n', '<leader>gd', ':Gvdiffsplit<CR>', { desc = '[G]it [D]iff', silent = true })
+-- Diagnostic keymaps
+vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
+vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
+vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
+vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })

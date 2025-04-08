@@ -19,6 +19,7 @@ require('lazy').setup({
   'tpope/vim-rhubarb',
   'tpope/vim-sleuth',
   'shumphrey/fugitive-gitlab.vim',
+  'mg979/vim-visual-multi',
 
   {
     'JezerM/oil-lsp-diagnostics.nvim',
@@ -190,8 +191,3 @@ require('nvim-treesitter.configs').setup {
   indent = { enable = true },
 }
 
--- Diagnostic keymaps
-vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
-vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
-vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
-vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
