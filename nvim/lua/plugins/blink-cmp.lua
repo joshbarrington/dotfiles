@@ -27,7 +27,7 @@ return {
     sources = {
       default = { 'lsp', 'path', 'snippets', 'buffer', 'copilot' },
       per_filetype = {
-        sql = { 'dadbod', 'buffer' },
+        sql = { 'dadbod' },
       },
       providers = {
         copilot = {
@@ -43,5 +43,4 @@ return {
       },
     },
   },
-  opts_extend = { 'sources.default' },
 }

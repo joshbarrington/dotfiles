@@ -35,6 +35,7 @@ homebrew_installed_packages:
   - colima
   - ctags
   - curl
+  - delve
   - entr
   - eza
   - fd
@@ -52,11 +53,16 @@ homebrew_installed_packages:
   - hub
   - jq
   - lazygit
+  - lazysql
+  - llm
+  - lua
   - mas
   - mise
   - neovim
   - node
   - openssl
+  - postgresql
+  - posting
   - pre-commit
   - rename
   - ripgrep
@@ -77,6 +83,7 @@ homebrew_taps: []
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
+  - alt-tab
   - audacity
   - audio-hijack
   - beardedspice
@@ -88,6 +95,7 @@ homebrew_cask_apps:
   - font-fira-code
   - font-fira-code-nerd-font
   - google-chrome
+  - handbrake
   - iterm2
   - keepassxc
   - keycastr
@@ -95,6 +103,7 @@ homebrew_cask_apps:
   - maccy
   - nordvpn
   - pgadmin4
+  - plex-media-server
   - postman
   - qbittorrent
   - rectangle

@@ -7,6 +7,9 @@ return {
       view_options = {
         show_hidden = true,
       },
+      lsp_file_methods = {
+        enabled = true,
+      },
     }
     vim.keymap.set('n', '<leader>o', function()
       require('oil').open()
