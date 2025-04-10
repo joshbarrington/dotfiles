@@ -36,3 +36,5 @@ vim.o.cursorcolumn = true
 vim.o.expandtab = true
 -- No wrap
 vim.o.wrap = false
+-- Diagnostics
+vim.diagnostic.config { jump = { float = true } }
