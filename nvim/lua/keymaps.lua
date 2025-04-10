@@ -22,7 +22,7 @@ vim.keymap.set('n', '<C-M-j>', '<C-w>j', { desc = 'Move to bottom pane' }) -- Ct
 vim.keymap.set('n', '<C-M-k>', '<C-w>k', { desc = 'Move to top pane' }) -- Ctrl + Option + k (up)
 vim.keymap.set('n', '<C-M-l>', '<C-w>l', { desc = 'Move to right pane' }) -- Ctrl + Option + l (right)
 -- Git diff
-vim.keymap.set('n', '<leader>gd', ':Gvdiffsplit<CR>', { desc = '[G]it [D]iff', silent = true })
+vim.keymap.set('n', '<leader>gvd', ':Gvdiffsplit<CR>', { desc = '[G]it [D]iff', silent = true })
 -- Diagnostic keymaps
 vim.keymap.set('n', '[d', vim.diagnostic.get_prev, { desc = 'Go to previous diagnostic message' })
 vim.keymap.set('n', ']d', vim.diagnostic.get_next, { desc = 'Go to next diagnostic message' })
