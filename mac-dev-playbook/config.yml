@@ -78,6 +78,7 @@ homebrew_installed_packages:
   - zoxide
   - zsh
   - zsh-autosuggestions
+  - zsh-syntax-highlighting
 
 homebrew_taps: []
 

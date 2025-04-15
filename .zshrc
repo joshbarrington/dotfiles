@@ -19,15 +19,13 @@ eval "$(zoxide init zsh)"
 
 # Brew zsh autosuggestions
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
 # Broot
 source $HOME/.config/broot/launcher/bash/br
 
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
-
-# path
-export PATH="/Users/joshua.barrington/.local/bin:$PATH"
-export PATH="/usr/local/sbin:$PATH"
 
 # aliases
 alias tree='tree -I "$(paste -d\| -s ~/.treeignore)"'
@@ -46,3 +44,5 @@ alias gemini='llm -m gemini'
 
 # !k7
 [ -f ~/k7-files/.k7 ] && source ~/k7-files/.k7
+# llm
+[ -f ~/.llm-keys ] && source ~/.llm-keys
