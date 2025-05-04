@@ -17,7 +17,6 @@ dotfiles_files:
   - .gitconfig
   - .gitignoreglobal
   - .osx
-  - .treeignore
   - .wezterm.lua
   - .tmux.conf
   - .zshrc
@@ -71,7 +70,6 @@ homebrew_installed_packages:
   - starship
   - tig
   - tmuxinator
-  - tree
   - unzip
   - wget
   - youtube-dl
