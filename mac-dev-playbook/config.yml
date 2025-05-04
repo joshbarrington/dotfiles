@@ -31,10 +31,8 @@ homebrew_installed_packages:
   - ccls
   - clang-format
   - cmake
-  - colima
   - ctags
   - curl
-
   - delve
   - entr
   - eza
@@ -74,6 +72,7 @@ homebrew_installed_packages:
   - unzip
   - wget
   - youtube-dl
+  - yq
   - zoxide
   - zsh
   - zsh-autosuggestions
@@ -96,7 +95,6 @@ homebrew_cask_apps:
   - font-fira-code-nerd-font
   - google-chrome
   - handbrake
-  - iterm2
   - keepassxc
   - keycastr
   - licecap
