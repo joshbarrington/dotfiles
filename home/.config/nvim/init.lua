@@ -98,6 +98,7 @@ require('lazy').setup({
         sql = { 'sqlfmt' },
         markdown = { 'prettier' },
         go = { 'goimports' },
+        yaml = { 'yamlfmt' },
       },
     },
     keys = {
@@ -149,6 +150,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 
 -- [[ Configure Treesitter ]]
 -- See `:help nvim-treesitter`
+---@diagnostic disable-next-line: missing-fields
 require('nvim-treesitter.configs').setup {
   ensure_installed = { 'go', 'lua', 'python', 'rust', 'tsx', 'typescript', 'markdown', 'yaml', 'toml', 'gomod' },
   auto_install = true,

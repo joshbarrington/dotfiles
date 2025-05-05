@@ -19,11 +19,11 @@
 
 `git remote set-url origin git@github.com:USERNAME/REPOSITORY.git`
 
-#### Symlinks
+#### Stow
+`stow -v -t $HOME home`
 
-`ln -s ~/github/dotfiles/nvim/* ~/.config/nvim/`\
-`ln -s ~/github/dotfiles/bat/* ~/.config/bat/`\
-`ln -s ~/github/dotfiles/starship/starship.toml  ~/.config/starship.toml`
+#### Pipe brew.yaml list
+`yq e -r ".homebrew_installed_packages.[]" brew.yaml`
 
 #### Install oh-my-zsh
 
