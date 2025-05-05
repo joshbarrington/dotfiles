@@ -28,16 +28,12 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     # install linuxbrew dependencies
     # install yq to parse yaml files
     if require apt; then
-        sudo add-apt-repository ppa:rmescandon/yq
         sudo apt update
-        sudo apt install -y build-essential procps curl file git yq
+        sudo apt install -y build-essential procps curl file git
+        snap install yq --channel=v3/stable
     fi
 fi
 
-sudo printf "${YELLOW}Applying GNU Stow${NC}\n"
-rm -f ~/.zshrc
-mkdir -p ~/.config
-stow -v --adopt -t $HOME home
 
 if ! require brew; then
     printf "${YELLOW}Installing Homebrew${NC}\n"
@@ -64,13 +60,18 @@ else
 fi
 
 printf "${YELLOW}Installing Homebrew packages${NC}\n"
-brew install $(yq e -r ".homebrew_installed_packages.[]" packages.yaml)
+brew install $(yq -er ".homebrew_installed_packages.[]" packages.yaml)
 
 # Essentials to be installed on Ubuntu
 # - wezterm
 # - chrome
 # - fira-code-nerd-font
 # - sway/waybar
+
+sudo printf "${YELLOW}Applying GNU Stow${NC}\n"
+rm -f ~/.zshrc
+mkdir -p ~/.config
+stow -v --adopt -t $HOME home
 
 # install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"

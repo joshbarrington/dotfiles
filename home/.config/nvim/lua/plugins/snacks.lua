@@ -1,7 +1,10 @@
 return {
   "folke/snacks.nvim",
+  priority = 1000,
+  lazy = false,
   opts = {
-    picker = {},
+    picker = { enabled = true },
+    scratch = { enabled = true },
   },
   config = function()
     vim.api.nvim_set_hl(0, "SnacksPickerDir", { fg = "#928374" })
@@ -39,5 +42,8 @@ return {
     { "gD", function() require("snacks").picker.lsp_declarations() end, desc = "Goto Declaration" },
     { "gr", function() require("snacks").picker.lsp_references() end, nowait = true, desc = "References" },
     { "gI", function() require("snacks").picker.lsp_implementations() end, desc = "Goto Implementation" },
+    -- scratch
+    { "<leader>.",  function() Snacks.scratch() end, desc = "Toggle Scratch Buffer" },
+    { "<leader>S",  function() Snacks.scratch.select() end, desc = "Select Scratch Buffer" },
   },
 }
