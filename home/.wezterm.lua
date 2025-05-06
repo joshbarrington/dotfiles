@@ -46,7 +46,7 @@ config.colors = {
     'fa4834', -- red
     'b8ba26', -- green
     'f9bc2f', -- yellow
-    '83a497', -- blue
+    '918b86', -- blue
     'fb4833', -- magenta
     '918b86', -- cyan
     'bdbbb4', -- white

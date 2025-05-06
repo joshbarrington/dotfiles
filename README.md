@@ -11,4 +11,4 @@
 `git remote set-url origin git@github.com:USERNAME/REPOSITORY.git`
 
 #### Run startup
-`sh setup.sh`
+`bash setup.sh`

@@ -63,20 +63,24 @@ printf "${YELLOW}Installing Homebrew packages${NC}\n"
 brew install $(yq -er ".homebrew_installed_packages.[]" packages.yaml)
 
 # Essentials to be installed on Ubuntu
-# - wezterm
+# - wezterm - https://wezterm.org/install/linux.html
 # - chrome
-# - fira-code-nerd-font
+# - fira-code-nerd-font - can be installed with brew install ... --cask
 # - sway/waybar
 
+# Need to source linuxbrew in bashrc if Linux, to run stow and zsh
 sudo printf "${YELLOW}Applying GNU Stow${NC}\n"
 rm -f ~/.zshrc
 mkdir -p ~/.config
 stow -v --adopt -t $HOME home
 
 # install oh-my-zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" --keep-zshrc
 # set starship config
 starship preset nerd-font-symbols > ~/.config/starship.toml
+
+# Add linuxbrew to .zshrc
+# eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 sudo printf "${YELLOW}Setting zsh as default shell${NC}\n"
 command -v zsh | sudo tee -a /etc/shells

@@ -31,7 +31,6 @@ homebrew_installed_packages:
   - lazysql
   - llm
   - lua
-  - mas
   - mise
   - neovim
   - node
@@ -39,11 +38,11 @@ homebrew_installed_packages:
   - postgresql
   - posting
   - pre-commit
-  - rename
   - ripgrep
   - rustup
   - spek
   - starship
+  - stow
   - tig
   - tmuxinator
   - unzip
@@ -89,3 +88,10 @@ homebrew_cask_apps:
   - wezterm
   - whatsapp
   - xld
+linux_installed_packages:
+  snap:
+    - keepassxc
+  apt:
+    - gnome-tweaks  # Set keybinding from caps<->esc
+    - sway
+    - waybar
