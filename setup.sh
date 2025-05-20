@@ -79,7 +79,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 # set starship config
 starship preset nerd-font-symbols > ~/.config/starship.toml
 
-# Add linuxbrew to .zshrc
+# Add linuxbrew to .zshrc if linux
 # eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 sudo printf "${YELLOW}Setting zsh as default shell${NC}\n"

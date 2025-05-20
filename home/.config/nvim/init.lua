@@ -20,125 +20,18 @@ require('lazy').setup({
   'tpope/vim-sleuth',
   'shumphrey/fugitive-gitlab.vim',
   'mg979/vim-visual-multi',
-
   {
     'JezerM/oil-lsp-diagnostics.nvim',
     opts = {},
   },
-
-  {
-    'kylechui/nvim-surround',
-    version = '*',
-    event = 'VeryLazy',
-    config = function()
-      require('nvim-surround').setup {}
-    end,
-  },
-
-  {
-    'folke/which-key.nvim',
-    config = function()
-      local wk = require 'which-key'
-      wk.add {
-        { '<leader>ya', '<cmd>%y<cr>', desc = 'Buffer contents' },
-        { '<leader>yp', "<cmd>let @+ = expand('%:~:.')<cr> <cmd><cr>", desc = 'Relative Path' },
-      }
-    end,
-  },
-
-  {
-    'ellisonleao/gruvbox.nvim',
-    priority = 1000,
-    config = function()
-      require('gruvbox').setup {
-        overrides = {
-          SignColumn = { bg = '#282828' },
-          DiagnosticSignError = { bg = '#282828', fg = '#fa4834' },
-          DiagnosticSignWarn = { bg = '#282828', fg = '#d69821' },
-          DiagnosticSignHint = { bg = '#282828', fg = '#689c69' },
-          DiagnosticSignInfo = { bg = '#282828', fg = '#458487' },
-        },
-      }
-      vim.cmd.colorscheme 'gruvbox'
-    end,
-  },
-
-  {
-    'nvim-lualine/lualine.nvim',
-    opts = {
-      options = {
-        theme = 'gruvbox',
-        component_separators = '|',
-        section_separators = '',
-      },
-    },
-  },
-
   { 'lukas-reineke/indent-blankline.nvim', main = 'ibl', opts = {} },
-
-  { 'numToStr/Comment.nvim', opts = {} },
-
-  {
-    'nvim-treesitter/nvim-treesitter',
-    dependencies = {
-      'nvim-treesitter/nvim-treesitter-textobjects',
-    },
-    build = ':TSUpdate',
-  },
-
-  {
-    'stevearc/conform.nvim',
-    cmd = { 'ConformInfo' },
-    opts = {
-      formatters_by_ft = {
-        lua = { 'stylua' },
-        python = { 'ruff' },
-        javascript = { 'prettier' },
-        typescript = { 'prettier' },
-        sql = { 'sqlfmt' },
-        markdown = { 'prettier' },
-        go = { 'goimports' },
-        yaml = { 'yamlfmt' },
-      },
-    },
-    keys = {
-      {
-        '<leader>bf',
-        function()
-          require('conform').format { async = true, lsp_fallback = true }
-        end,
-        mode = 'n',
-        desc = '[F]ormat buffer',
-      },
-    },
-  },
-
-  {
-    'iamcco/markdown-preview.nvim',
-    cmd = { 'MarkdownPreviewToggle', 'MarkdownPreview', 'MarkdownPreviewStop' },
-    ft = { 'markdown' },
-    build = function()
-      vim.fn['mkdp#util#install']()
-    end,
-  },
-
-  {
-    'ray-x/lsp_signature.nvim',
-    event = 'VeryLazy',
-    opts = {},
-    config = function(_, opts)
-      require('lsp_signature').setup(opts)
-    end,
-  },
-
+  { 'numToStr/Comment.nvim',               opts = {} },
   { import = 'plugins' },
 }, {})
 
 -- Remove trailing whitespace on write
 vim.api.nvim_create_autocmd('BufWritePre', { command = '%s/\\s\\+$//e' })
 
--- [[ Highlight on yank ]]
--- See `:help vim.highlight.on_yank()`
 local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
 vim.api.nvim_create_autocmd('TextYankPost', {
   callback = function()
@@ -148,8 +41,6 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   pattern = '*',
 })
 
--- [[ Configure Treesitter ]]
--- See `:help nvim-treesitter`
 ---@diagnostic disable-next-line: missing-fields
 require('nvim-treesitter.configs').setup {
   ensure_installed = { 'go', 'lua', 'python', 'rust', 'tsx', 'typescript', 'markdown', 'yaml', 'toml', 'gomod' },
