@@ -43,6 +43,6 @@ alias gemini-flash='llm -m gemini-flash'
 alias gemini='llm -m gemini'
 
 # !k7
-[ -f ~/k7-files/.k7 ] && source ~/k7-files/.k7
+[ -f ~/.k7 ] && source ~/.k7
 # llm
 [ -f ~/.llm-keys ] && source ~/.llm-keys

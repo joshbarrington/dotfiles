@@ -38,5 +38,3 @@ vim.o.expandtab = true
 vim.o.wrap = false
 -- Diagnostics
 vim.diagnostic.config { jump = { float = true } }
--- DB UI query save location
-vim.g.db_ui_save_location = '~/k7-files/db'
