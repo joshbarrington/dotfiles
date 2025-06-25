@@ -7,6 +7,8 @@ return {
             python = { 'ruff' },
             javascript = { 'prettier' },
             typescript = { 'prettier' },
+            html = { 'prettier' },
+            htmlangular = { 'prettier' },
             sql = { 'sqlfmt' },
             markdown = { 'prettier' },
             go = { 'goimports' },
