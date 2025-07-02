@@ -27,7 +27,12 @@ return {
     sources = {
       default = { 'lsp', 'path', 'snippets', 'buffer', 'copilot' },
       per_filetype = {
-        sql = { 'dadbod' },
+        sql = function()
+          if vim.b.db and #vim.b.db > 0 then
+            return { 'dadbod' }
+          end
+          return {}
+        end,
       },
       providers = {
         copilot = {
