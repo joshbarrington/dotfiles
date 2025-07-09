@@ -25,7 +25,7 @@ require('lazy').setup({
     opts = {},
   },
   { 'lukas-reineke/indent-blankline.nvim', main = 'ibl', opts = {} },
-  { 'numToStr/Comment.nvim',               opts = {} },
+  { 'numToStr/Comment.nvim', opts = {} },
   { import = 'plugins' },
 }, {})
 
@@ -48,3 +48,12 @@ require('nvim-treesitter.configs').setup {
   highlight = { enable = true },
   indent = { enable = true },
 }
+--
+-- Creates a user command named :RestartBlinkCmp
+vim.api.nvim_create_user_command('RestartBlinkCmp', function()
+  package.loaded['blink.cmp'] = nil
+  require 'blink.cmp'
+  print 'Successfully restarted blink.cmp'
+end, {
+  desc = 'Restarts the blink.cmp module',
+})
