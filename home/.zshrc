@@ -40,7 +40,6 @@ eval "$(mise activate zsh)"
 # openrouter llm
 alias deepseek='llm -m deepseek'
 alias gemini-flash='llm -m gemini-flash'
-alias gemini='llm -m gemini'
 
 # !k7
 [ -f ~/.k7 ] && source ~/.k7

@@ -25,7 +25,7 @@ require('lazy').setup({
     opts = {},
   },
   { 'lukas-reineke/indent-blankline.nvim', main = 'ibl', opts = {} },
-  { 'numToStr/Comment.nvim',               opts = {} },
+  { 'numToStr/Comment.nvim', opts = {} },
   { import = 'plugins' },
 }, {})
 

@@ -5,7 +5,7 @@ return {
       { 'williamboman/mason.nvim', config = true },
       'williamboman/mason-lspconfig.nvim',
       { 'j-hui/fidget.nvim', tag = 'legacy', opts = {} },
-      'folke/neodev.nvim',
+      { 'folke/lazydev.nvim', ft = 'lua' },
     },
     config = function()
       local on_attach = function(_, bufnr)
@@ -51,8 +51,6 @@ return {
         jsonls = {},
         vtsls = {},
       }
-
-      require('neodev').setup()
 
       local capabilities = vim.lsp.protocol.make_client_capabilities()
       capabilities = require('blink.cmp').get_lsp_capabilities(capabilities)
