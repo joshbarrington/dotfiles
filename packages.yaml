@@ -41,6 +41,7 @@ homebrew_installed_packages:
   - ripgrep
   - rustup
   - spek
+  - sst/tap/opencode
   - starship
   - stow
   - tig
