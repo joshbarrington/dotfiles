@@ -12,6 +12,8 @@ export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
 
 source $ZSH/oh-my-zsh.sh
 
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
 # Starship prompt
 eval "$(starship init zsh)"
 # Zoxide - intelligent cd
@@ -40,6 +42,7 @@ eval "$(mise activate zsh)"
 # openrouter llm
 alias deepseek='llm -m deepseek'
 alias gemini-flash='llm -m gemini-flash'
+alias gemini-or='llm -m gemini'
 
 # !k7
 [ -f ~/.k7 ] && source ~/.k7
