@@ -4,8 +4,8 @@ return {
     dependencies = {
       { 'williamboman/mason.nvim', config = true },
       'williamboman/mason-lspconfig.nvim',
-      { 'j-hui/fidget.nvim', tag = 'legacy', opts = {} },
-      { 'folke/lazydev.nvim', ft = 'lua' },
+      { 'j-hui/fidget.nvim',       tag = 'legacy', opts = {} },
+      { 'folke/lazydev.nvim',      ft = 'lua' },
     },
     config = function()
       local on_attach = function(_, bufnr)
@@ -45,6 +45,9 @@ return {
           Lua = {
             workspace = { checkThirdParty = false },
             telemetry = { enable = false },
+            diagnostics = {
+              globals = { 'vim' },
+            }
           },
         },
         ruff = {},
