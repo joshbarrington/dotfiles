@@ -10,11 +10,14 @@ return {
     config = function()
       local dap = require 'dap'
       local ui = require 'dapui'
+      local dapgo = require 'dap-go'
 
       require('dapui').setup()
       require('dap-go').setup()
       require('nvim-dap-virtual-text').setup()
-
+      vim.keymap.set('n', '<leader>dt', function()
+        dapgo.debug_test()
+      end, { desc = "Debug Go Test" })
       vim.keymap.set('n', '<Leader>db', dap.toggle_breakpoint, { desc = '[d]ap Toggle [b]reakpoint' })
       vim.keymap.set('n', '<Leader>dc', dap.continue, { desc = '[d]ap [c]ontinue' })
       vim.keymap.set('n', '<Leader>dr', dap.restart, { desc = '[d]ap [r]estart' })
@@ -23,6 +26,7 @@ return {
       vim.keymap.set('n', '<Leader>dso', dap.step_over, { desc = '[d]ap step [o]ver' })
       vim.keymap.set('n', '<Leader>dst', dap.step_out, { desc = '[d]ap step out' })
       vim.keymap.set('n', '<Leader>dsb', dap.step_back, { desc = '[d]ap step [b]ack' })
+      vim.keymap.set('n', '<Leader>dx', dap.terminate, { desc = '[d]ap terminate' })
       vim.keymap.set('n', '<Leader>dv', function()
         require('dapui').eval(nil, { enter = true })
       end, { desc = '[d]ap view' })
