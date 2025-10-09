@@ -1,6 +1,6 @@
 return {
   'saghen/blink.cmp',
-  dependencies = { 'giuxtaposition/blink-cmp-copilot' },
+  dependencies = { 'giuxtaposition/blink-cmp-copilot', "MattiasMTS/cmp-dbee" },
   version = '1.*',
   opts = {
     keymap = {
@@ -45,6 +45,7 @@ return {
           name = 'dadbod',
           module = 'vim_dadbod_completion.blink',
         },
+        dbee = { name = 'cmp-dbee', module = 'blink.compat.source' }
       },
     },
   },
