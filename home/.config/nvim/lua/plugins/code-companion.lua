@@ -14,6 +14,7 @@ return {
           adapter = 'copilot',
         },
       },
+      completion = { provider = 'blink.cmp' },
     }
   end,
 }

@@ -5,6 +5,7 @@ return {
   opts = {
     picker = { enabled = true },
     scratch = { enabled = true },
+    input = { enabled = true },
   },
   config = function()
     vim.api.nvim_set_hl(0, "SnacksPickerDir", { fg = "#928374" })

@@ -1,6 +1,11 @@
 require 'settings'
 require 'keymaps'
 
+-- Fix for blink.cmp index field '*' nil error in Neovim 0.11+
+if vim.fn.has('nvim-0.11') == 1 then
+  vim.lsp.config('*', { capabilities = {} })
+end
+
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system {

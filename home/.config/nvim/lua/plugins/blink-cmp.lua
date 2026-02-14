@@ -1,6 +1,6 @@
 return {
   'saghen/blink.cmp',
-  dependencies = { 'giuxtaposition/blink-cmp-copilot', "MattiasMTS/cmp-dbee" },
+  dependencies = { 'giuxtaposition/blink-cmp-copilot', 'MattiasMTS/cmp-dbee' },
   version = '1.*',
   opts = {
     keymap = {
@@ -27,12 +27,13 @@ return {
     sources = {
       default = { 'lsp', 'path', 'snippets', 'buffer', 'copilot' },
       per_filetype = {
-        sql = function()
-          if vim.b.db and #vim.b.db > 0 then
-            return { 'dadbod' }
-          end
-          return {}
-        end,
+        sql = { 'dbee', 'buffer' },
+        -- sql = function()
+        --   if vim.b.db and #vim.b.db > 0 then
+        --     return { 'dadbod' }
+        --   end
+        --   return { 'dbee' }
+        -- end,
       },
       providers = {
         copilot = {
@@ -41,11 +42,11 @@ return {
           score_offset = 100,
           async = true,
         },
-        dadbod = {
-          name = 'dadbod',
-          module = 'vim_dadbod_completion.blink',
-        },
-        dbee = { name = 'cmp-dbee', module = 'blink.compat.source' }
+        -- dadbod = {
+        --   name = 'dadbod',
+        --   module = 'vim_dadbod_completion.blink',
+        -- },
+        dbee = { name = 'cmp-dbee', module = 'blink.compat.source' },
       },
     },
   },
