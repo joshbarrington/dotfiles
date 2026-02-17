@@ -39,6 +39,7 @@ return {
               staticcheck = true,
               completeUnimported = true,
               usePlaceholders = true,
+              buildFlags = { "-tags=manual" },
             },
           },
         },
@@ -68,10 +69,13 @@ return {
 
       -- 3. Use the native enable function
       for server_name, config in pairs(servers) do
-        vim.lsp.enable(server_name, {
+        -- Merge custom settings with the default configuration provided by nvim-lspconfig
+        local defaults = vim.lsp.config[server_name] or {}
+        vim.lsp.config[server_name] = vim.tbl_deep_extend('force', defaults, {
           capabilities = capabilities,
-          settings = config.settings, -- Pass the nested settings table here
+          settings = config.settings,
         })
+        vim.lsp.enable(server_name)
       end
 
       vim.lsp.handlers['textDocument/codeAction'] = vim.lsp.with(vim.lsp.handlers.code_action, {

@@ -7,6 +7,8 @@ return {
         require("dbee").install()
     end,
     config = function()
-        require("dbee").setup()
+        require("dbee").setup({
+            page_size = 10000,
+        })
     end,
 }
