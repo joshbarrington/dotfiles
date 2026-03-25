@@ -11,7 +11,7 @@ return {
         enabled = true,
       },
     }
-    vim.keymap.set('n', '<leader>o', function()
+    vim.keymap.set('n', '<leader>p', function()
       require('oil').open()
     end, { desc = 'Open [O]il' })
   end,

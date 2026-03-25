@@ -53,7 +53,7 @@ require('nvim-treesitter.configs').setup {
   highlight = { enable = true },
   indent = { enable = true },
 }
---
+
 -- Creates a user command named :RestartBlinkCmp
 vim.api.nvim_create_user_command('RestartBlinkCmp', function()
   package.loaded['blink.cmp'] = nil

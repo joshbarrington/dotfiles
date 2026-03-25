@@ -48,3 +48,5 @@ alias gemini-or='llm -m gemini'
 [ -f ~/.k7 ] && source ~/.k7
 # llm
 [ -f ~/.llm-keys ] && source ~/.llm-keys
+
+DISABLE_MAGIC_FUNCTIONS="true"
