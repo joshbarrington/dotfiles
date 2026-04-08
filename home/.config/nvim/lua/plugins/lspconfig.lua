@@ -47,7 +47,7 @@ return {
         rust_analyzer = {},
         taplo = {},
         lua_ls = {
-          settings = { -- THIS WRAPPER IS REQUIRED
+          settings = {
             Lua = {
               workspace = { checkThirdParty = false },
               telemetry = { enable = false },
