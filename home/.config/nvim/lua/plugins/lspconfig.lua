@@ -24,8 +24,8 @@ return {
           nmap('gd', vim.lsp.buf.definition, '[G]oto [D]efinition')
           nmap('gI', vim.lsp.buf.implementation, '[G]oto [I]mplementation')
           nmap('<leader>D', vim.lsp.buf.type_definition, 'Type [D]efinition')
-          nmap('K', vim.lsp.buf.hover, 'Hover Documentation')
-          nmap('<C-k>', vim.lsp.buf.signature_help, 'Signature Documentation')
+          nmap('K', function() vim.lsp.buf.hover({ border = 'rounded' }) end, 'Hover Documentation')
+          nmap('<C-k>', function() vim.lsp.buf.signature_help({ border = 'rounded' }) end, 'Signature Documentation')
           nmap('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
         end,
       })
@@ -77,12 +77,6 @@ return {
         })
         vim.lsp.enable(server_name)
       end
-
-      vim.lsp.handlers['textDocument/codeAction'] = vim.lsp.with(vim.lsp.handlers.code_action, {
-        border = 'rounded',
-        relative = 'cursor', -- Makes it appear "inline" at the cursor
-      })
-      vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, { border = 'rounded' })
     end,
   },
 }
