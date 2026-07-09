@@ -25,17 +25,17 @@ return {
       documentation = { auto_show = true, window = { border = 'rounded' } },
     },
     sources = {
-      default = { 'lsp', 'path', 'snippets', 'buffer', 'copilot' },
+      default = { 'lsp', 'path', 'snippets', 'buffer' },
       per_filetype = {
         sql = { 'buffer' },
       },
       providers = {
-        copilot = {
-          name = 'copilot',
-          module = 'blink-cmp-copilot',
-          score_offset = 100,
-          async = true,
-        },
+        -- copilot = {
+        --   name = 'copilot',
+        --   module = 'blink-cmp-copilot',
+        --   score_offset = 100,
+        --   async = true,
+        -- },
       },
     },
   },
