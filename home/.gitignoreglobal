@@ -7,3 +7,4 @@ node_modules
 .mise.toml
 mise.toml
 .env
+.cache/
