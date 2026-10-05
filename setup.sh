@@ -74,6 +74,11 @@ rm -f ~/.zshrc
 mkdir -p ~/.config
 stow -v --adopt -t $HOME home
 
+printf "${YELLOW}Installing opencode integrations${NC}\n"
+while IFS= read -r cmd <&3; do
+    bash -c "$cmd" || printf "${RED}Failed: %s${NC}\n" "$cmd"
+done 3< <(yq -er ".opencode_integrations.[]" packages.yaml)
+
 # install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" --keep-zshrc
 # set starship config

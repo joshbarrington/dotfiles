@@ -1,16 +1,20 @@
 homebrew_installed_packages:
+  - ansible
   - aws-shell
   - awscli
   - azure-cli
   - bat
   - broot
   - btop
+  - cadence-workflow
   - ccls
   - clang-format
   - cmake
+  - colima
   - ctags
   - curl
   - delve
+  - docker-agent
   - entr
   - eza
   - fd
@@ -24,50 +28,82 @@ homebrew_installed_packages:
   - git-delta
   - git-lfs
   - glab
+  - gnuplot
+  - go-task
+  - golangci-lint
+  - helm
+  - herdr
   - httpie
   - hub
+  - jackett
   - jq
+  - just
+  - kind
   - lazygit
   - lazysql
+  - librdkafka
   - llm
   - lua
+  - mas
   - mise
   - neovim
   - node
   - openssl
+  - oven-sh/bun/bun
   - postgresql
   - posting
   - pre-commit
+  - rainfrog
+  - rclone
+  - rename
   - ripgrep
   - rustup
   - spek
+  - sqlc
   - sst/tap/opencode
   - starship
   - stow
   - tig
   - tmuxinator
+  - umputun/apps/revdiff
   - unzip
+  - uv
   - wget
   - youtube-dl
   - yq
+  - zig
   - zoxide
   - zsh
+  - zsh-autocomplete
   - zsh-autosuggestions
+  - zsh-history-substring-search
   - zsh-syntax-highlighting
+# run after stow; each writes its files into ~/.config/opencode
+opencode_integrations:
+  - herdr integration install opencode
+  - caveman enable opencode
+  - 'd=$(mktemp -d) && git clone -q --depth 1 https://github.com/umputun/revdiff "$d" && bash "$d/plugins/opencode/setup.sh"'
 homebrew_cask_apps:
   - alt-tab
   - audacity
   - audio-hijack
+  - balenaetcher
   - beardedspice
   - calibre
   - chromedriver
+  - chromium
+  - claude
+  - claude-code@latest
   - dash
   - docker
+  - docker-desktop
   - firefox@developer-edition
   - font-fira-code
   - font-fira-code-nerd-font
   - google-chrome
   - handbrake
+  - handbrake-app
+  - iterm2
   - keepassxc
   - keycastr
   - licecap
@@ -79,15 +115,19 @@ homebrew_cask_apps:
   - qbittorrent
   - rectangle
   - rekordbox
+  - rocket-chat
   - slack
   - soulseek
+  - splice
   - spotify
+  - steam
   - touchdesigner
   - tunnelblick
   - visual-studio-code
   - vlc
   - wezterm
   - whatsapp
+  - whisky
   - xld
 linux_installed_packages:
   snap:
