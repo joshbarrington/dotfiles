@@ -32,7 +32,7 @@ config.colors = {
 	foreground = "bdbbb4",
 	background = "282727",
 	ansi = {
-		"b8ba26", -- black
+		"3c3836", -- black
 		"cb231d", -- red
 		"98961a", -- green
 		"d69821", -- yellow
