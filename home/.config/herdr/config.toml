@@ -9,3 +9,8 @@ status_indicators = "dots"
 
 [theme.custom]
 selection_bg = "#504945"
+
+[[keys.command]]
+key = "cmd+r"
+type = "plugin_action"
+command = "persiyanov.reviewr.toggle"
