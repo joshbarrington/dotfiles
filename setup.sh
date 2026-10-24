@@ -72,7 +72,12 @@ brew install $(yq -er ".homebrew_installed_packages.[]" packages.yaml)
 sudo printf "${YELLOW}Applying GNU Stow${NC}\n"
 rm -f ~/.zshrc
 mkdir -p ~/.config
+# real dir so stow links files, not the dir (fisher writes plugins in here)
+mkdir -p ~/.config/fish
 stow -v --adopt -t $HOME home
+
+printf "${YELLOW}Installing fish plugins${NC}\n"
+fish -c 'fisher update'
 
 printf "${YELLOW}Installing opencode integrations${NC}\n"
 while IFS= read -r cmd <&3; do

@@ -1,0 +1,7 @@
+{
+  "name": "Gruvbox ANSI",
+  "base": "dark-ansi",
+  "overrides": {
+    "selectionBg": "rgb(80, 73, 69)"
+  }
+}

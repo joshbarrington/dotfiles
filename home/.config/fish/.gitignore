@@ -1,0 +1,7 @@
+# fisher installs plugins into these; fish_plugins is the source of truth
+functions/
+completions/
+conf.d/
+themes/
+# fish runtime state
+fish_variables

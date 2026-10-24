@@ -6,6 +6,9 @@ if wezterm.config_builder then
 	config = wezterm.config_builder()
 end
 
+-- zsh stays the login shell; fish is the interactive shell
+config.default_prog = { "/opt/homebrew/bin/fish", "-l" }
+
 config.keys = {
 	-- Splitting and closing panes
 	{ key = "d", mods = "CMD", action = action.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
@@ -31,6 +34,8 @@ config.color_scheme = "Gruvbox dark, hard (base16)"
 config.colors = {
 	foreground = "bdbbb4",
 	background = "282727",
+	selection_fg = "ebdbb2",
+	selection_bg = "504945",
 	ansi = {
 		"3c3836", -- black
 		"cb231d", -- red

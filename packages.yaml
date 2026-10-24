@@ -4,7 +4,6 @@ homebrew_installed_packages:
   - awscli
   - azure-cli
   - bat
-  - broot
   - btop
   - cadence-workflow
   - ccls
@@ -19,6 +18,8 @@ homebrew_installed_packages:
   - eza
   - fd
   - ffmpeg
+  - fish
+  - fisher
   - fswatch
   - fx
   - fzf
@@ -81,7 +82,6 @@ homebrew_installed_packages:
 # run after stow; each writes its files into ~/.config/opencode
 opencode_integrations:
   - herdr integration install opencode
-  - caveman enable opencode
   - 'd=$(mktemp -d) && git clone -q --depth 1 https://github.com/umputun/revdiff "$d" && bash "$d/plugins/opencode/setup.sh"'
 homebrew_cask_apps:
   - alt-tab

@@ -1,0 +1,24 @@
+# deps: opencode installs these itself
+node_modules
+package.json
+package-lock.json
+bun.lock
+
+# opencode runtime state
+service.json
+
+# headroom
+opencode.jsonc
+*.headroom-backup
+
+# herdr: `herdr integration install opencode`
+herdr-tui-session.js
+plugins/herdr-agent-state.js
+tui.jsonc
+
+# revdiff: plugins/opencode/setup.sh in the revdiff repo
+commands/revdiff.md
+tools/revdiff.ts
+tools/launch-revdiff.sh
+plugins/revdiff-plan-review.ts
+plugins/launch-plan-review.sh

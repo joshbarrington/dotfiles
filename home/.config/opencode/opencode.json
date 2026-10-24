@@ -29,25 +29,6 @@
         "serve"
       ],
       "enabled": true
-    },
-    "caveman": {
-      "type": "local",
-      "command": [
-        "{env:HOME}/.caveman/bin/caveman-mcp"
-      ],
-      "enabled": true
-    }
-  },
-  "provider": {
-    "openai": {
-      "options": {
-        "baseURL": "http://127.0.0.1:8787/w/opencode/openai/v1"
-      }
-    },
-    "anthropic": {
-      "options": {
-        "baseURL": "http://127.0.0.1:8787/w/opencode/anthropic/v1"
-      }
     }
   }
 }

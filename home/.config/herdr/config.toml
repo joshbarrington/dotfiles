@@ -1,0 +1,11 @@
+onboarding = false
+
+[theme]
+name = "gruvbox"
+auto_switch = false
+
+[ui]
+status_indicators = "dots"
+
+[theme.custom]
+selection_bg = "#504945"
