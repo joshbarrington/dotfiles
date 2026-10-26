@@ -11,6 +11,11 @@ status_indicators = "dots"
 selection_bg = "#504945"
 
 [[keys.command]]
-key = "cmd+r"
+key = "ctrl+alt+r"
 type = "plugin_action"
 command = "persiyanov.reviewr.toggle"
+
+[[keys.command]]
+key = "ctrl+alt+w"
+type = "plugin_action"
+command = "joshbarrington.jumar.toggle"
