@@ -1,3 +1,6 @@
+# Keep PATH entries unique
+typeset -U path PATH
+
 plugins=(
   git
   docker
@@ -12,7 +15,10 @@ export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
 
 source $ZSH/oh-my-zsh.sh
 
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+case "$(uname -s)" in
+  Darwin) eval "$(/opt/homebrew/bin/brew shellenv)" ;;
+  Linux)  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)" ;;
+esac
 
 # Starship prompt
 eval "$(starship init zsh)"
@@ -22,9 +28,6 @@ eval "$(zoxide init zsh)"
 # Brew zsh autosuggestions
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-# Broot
-source $HOME/.config/broot/launcher/bash/br
 
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
@@ -50,3 +53,8 @@ alias gemini-or='llm -m gemini'
 [ -f ~/.llm-keys ] && source ~/.llm-keys
 
 DISABLE_MAGIC_FUNCTIONS="true"
+
+export DOCKER_DEFAULT_PLATFORM=linux/amd64
+
+# Add Neovim Mason tools to PATH
+export PATH="$PATH:$HOME/.local/share/nvim/mason/bin"

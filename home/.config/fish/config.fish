@@ -1,4 +1,9 @@
-/opt/homebrew/bin/brew shellenv | source
+switch (uname -s)
+    case Darwin
+        /opt/homebrew/bin/brew shellenv | source
+    case Linux
+        /home/linuxbrew/.linuxbrew/bin/brew shellenv | source
+end
 
 set -gx DOCKER_DEFAULT_PLATFORM linux/amd64
 
@@ -38,3 +43,6 @@ end
 
 # llm - plain `export X=y` lines, which fish understands
 test -f ~/.llm-keys; and source ~/.llm-keys
+
+# jumar - cd into the chosen worktree on Enter
+command -q jumar; and jumar init fish | source

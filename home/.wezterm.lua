@@ -7,7 +7,8 @@ if wezterm.config_builder then
 end
 
 -- zsh stays the login shell; fish is the interactive shell
-config.default_prog = { "/opt/homebrew/bin/fish", "-l" }
+local brew_prefix = wezterm.target_triple:find("darwin") and "/opt/homebrew" or "/home/linuxbrew/.linuxbrew"
+config.default_prog = { brew_prefix .. "/bin/fish", "-l" }
 
 config.keys = {
 	-- Splitting and closing panes
@@ -64,6 +65,10 @@ config.inactive_pane_hsb = {
 	brightness = 0.7,
 }
 config.hide_tab_bar_if_only_one_tab = true
+-- Keep the title bar but leave it empty
+wezterm.on("format-window-title", function()
+	return ""
+end)
 
 config.font = wezterm.font("FiraCode Nerd Font Mono")
 config.font_size = 14
