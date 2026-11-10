@@ -2,7 +2,7 @@ onboarding = false
 
 [terminal]
 # zsh stays the login shell; fish is the interactive shell in panes
-default_shell = "/opt/homebrew/bin/fish"
+default_shell = "fish"
 
 [theme]
 name = "gruvbox"

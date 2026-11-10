@@ -77,7 +77,8 @@ mkdir -p ~/.config/fish
 stow -v --adopt -t $HOME home
 
 printf "${YELLOW}Installing fish plugins${NC}\n"
-fish -c 'fisher update'
+# bootstrap fisher; fish_plugins lists it, so update installs it for real
+fish -c 'curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher update'
 
 printf "${YELLOW}Installing opencode integrations${NC}\n"
 while IFS= read -r cmd <&3; do
