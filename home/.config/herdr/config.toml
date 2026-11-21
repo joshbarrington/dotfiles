@@ -23,3 +23,9 @@ command = "persiyanov.reviewr.toggle"
 key = "ctrl+alt+w"
 type = "plugin_action"
 command = "joshbarrington.jumar.toggle"
+
+[[keys.command]]
+key = "ctrl+alt+p"
+type = "plugin_action"
+command = "herdr-bar.open"
+description = "command bar"

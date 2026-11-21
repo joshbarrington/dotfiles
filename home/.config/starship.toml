@@ -1,3 +1,17 @@
+# Map the base ANSI names to their bright variants so bold prompt segments look
+# the same in terminals without WezTerm's bold_brightens_ansi_colors (e.g. Rex)
+palette = "brights"
+
+[palettes.brights]
+black = "bright-black"
+red = "bright-red"
+green = "bright-green"
+yellow = "bright-yellow"
+blue = "bright-blue"
+purple = "bright-purple"
+cyan = "bright-cyan"
+white = "bright-white"
+
 [aws]
 disabled = true
 symbol = "  "

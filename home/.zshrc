@@ -54,7 +54,6 @@ alias gemini-or='llm -m gemini'
 
 DISABLE_MAGIC_FUNCTIONS="true"
 
-export DOCKER_DEFAULT_PLATFORM=linux/amd64
-
 # Add Neovim Mason tools to PATH
 export PATH="$PATH:$HOME/.local/share/nvim/mason/bin"
+export PATH="/Users/jb/.codeaf/bin:$PATH" # codeaf installer

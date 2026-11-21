@@ -5,10 +5,14 @@ switch (uname -s)
         /home/linuxbrew/.linuxbrew/bin/brew shellenv | source
 end
 
-set -gx DOCKER_DEFAULT_PLATFORM linux/amd64
-
 # Add Neovim Mason tools to PATH
 fish_add_path -a ~/.local/share/nvim/mason/bin
+
+# codeaf
+fish_add_path ~/.codeaf/bin
+
+# ~/.local/bin (herdr-core: hc, herdr-core; uv, agy, ...)
+fish_add_path ~/.local/bin
 
 if status is-interactive
     set -g fish_greeting
@@ -33,6 +37,12 @@ if status is-interactive
     abbr -a gemini-or 'llm -m gemini'
 
     alias tree='tree -I (paste -d\| -s ~/.treeignore | string collect)'
+
+    # kubernetes (CKAD exam shortcuts) - lists, so $do/$now expand to separate args
+    alias k=kubectl
+    command -q kubectl; and kubectl completion fish | source
+    set -g do --dry-run=client -o yaml
+    set -g now --force --grace-period=0
 
     # !k7 - bash file: env via bass, aliases are fish-compatible as-is
     if test -f ~/.k7
