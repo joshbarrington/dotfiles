@@ -61,7 +61,7 @@ homebrew_installed_packages:
   - rustup
   - spek
   - sqlc
-  - sst/tap/opencode
+  - anomalyco/tap/opencode-v2
   - starship
   - stow
   - tig
@@ -70,7 +70,6 @@ homebrew_installed_packages:
   - unzip
   - uv
   - wget
-  - youtube-dl
   - yq
   - zig
   - zoxide
@@ -136,3 +135,6 @@ linux_installed_packages:
     - gnome-tweaks  # Set keybinding from caps<->esc
     - sway
     - waybar
+    - wl-clipboard
+    - xclip
+    - mkcert
